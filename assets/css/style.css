@@ -1,5 +1,12 @@
 body {
+    color: #ffffff;
     background:
-        blue
-        url()
+        url(../images/3d-space-image.jpg)
+        center center / cover
+        no-repeat
+        fixed;
+}
+
+h1 {
+    height: 20px;
 }
