@@ -7,6 +7,7 @@ body {
         fixed;
 }
 
-h1 {
-    height: 20px;
+#heading-logo {
+    height: 120px;
+    
 }
