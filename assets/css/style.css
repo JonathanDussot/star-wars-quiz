@@ -1,4 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Libre Franklin', sans-serif;
     color: #ffffff;
     background:
         url(../images/3d-space-image.jpg)
@@ -6,8 +13,50 @@ body {
         no-repeat
         fixed;
 }
+/* header section with logo*/
+h1 {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #333b;
+}
 
 #heading-logo {
-    height: 120px;
-    
+    height: 100px;
+    width:110px;
+    margin: 0px 5px;
+}
+/* styles for game-area section*/
+
+.question-area {
+    width:90%;
+    max-width: 600px;
+    height: 30vh;
+    margin: 15px auto;
+    padding: 20px 8px;
+    background-color: #333b;
+}
+
+.answer-btn {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color: #dddb;
+}
+
+.game-area {
+    display: none;
+}
+
+.instructions-area {
+    width: 90%;
+    max-width: 600px;
+    height: 60vh;
+    margin: 15px auto;
+    padding: 20px 8px;
+    background-color: #333b;
 }
