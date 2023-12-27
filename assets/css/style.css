@@ -55,8 +55,26 @@ h1 {
 .instructions-area {
     width: 90%;
     max-width: 600px;
-    height: 60vh;
+    height: 100%;
     margin: 15px auto;
     padding: 20px 8px;
     background-color: #333b;
+}
+
+.instruction {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1.5px dashed #fffb;
+}
+
+h2 {
+    padding: 5px 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#yoda-img {
+    width: 85px;
+    height: 130px;
+    padding-right: 8px;
 }
