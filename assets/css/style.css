@@ -40,14 +40,15 @@ h1 {
 }
 
 .question {
-    text-align: center;
+    justify-content: center;
 }
 
 .answer-btn {
     height: 50px;
     margin: 0 auto;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    font-size: 1.1em;
 }
 
 .score-area {
@@ -65,7 +66,7 @@ h1 {
 
 .next-btn {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .next-question-btn {
@@ -122,9 +123,13 @@ h2 {
     background-color: #33fc;
 }
 
+.game-type {
+    padding-top:30px;
+}
+
 .game-type-btn {
     height: 90px;
-    margin: 5px auto;
+    margin: 10px auto;
     overflow: hidden;
     position: relative;
     font-size: 1.3em;
@@ -163,6 +168,7 @@ h2 {
     #heading-logo {
         width: 100%;
     }
+}
 
 /* media query for tablets (768px) and larger */
 @media screen and (min-width:768px){
