@@ -44,12 +44,9 @@ h1 {
 }
 
 .answer-btn {
-    width: 90%;
     height: 50px;
     margin: 0 auto;
-    display: flex;
     justify-content: center;
-    background-color: #dddb;
     text-align: center;
 }
 
@@ -64,6 +61,18 @@ h1 {
 
 .game-area {
     /*display: none;*/
+}
+
+.next-btn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.next-question-btn {
+    height: 60px;
+    width: 35%;
+    font-size: 1.3em;
+    background-color: #dddb;
 }
 
 /* instuction area styles*/
@@ -94,19 +103,30 @@ h2 {
     padding-right: 8px;
 }
 
-.question-area, .answer-btn, .instructions-area, .game-type-btn {
+.question-area, .answer-btn, .instructions-area, .game-type-btn, .next-question-btn {
     border-radius: 15px;
     border: 1.5px solid #000;
 }
 
-.game-type-btn {
+.game-type-btn, .answer-btn {
     width: 90%;
+    display: flex;
+    background-color: #dddb;
+}
+
+.game-type-btn:hover, .answer-btn:hover, .next-question-btn:hover {
+    background-color: #eeec;
+}
+
+.game-type-btn:active, .answer-btn:active, .next-question-btn:active {
+    background-color: #33fc;
+}
+
+.game-type-btn {
     height: 90px;
     margin: 5px auto;
-    background-color: #dddb;
     overflow: hidden;
     position: relative;
-    display: flex;
     font-size: 1.3em;
     font-family: 'Libre Franklin', sans-serif;
     align-items: center;
