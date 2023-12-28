@@ -74,6 +74,7 @@ h1 {
     width: 35%;
     font-size: 1.3em;
     background-color: #dddb;
+    cursor: pointer;
 }
 
 /* instuction area styles*/
@@ -113,6 +114,7 @@ h2 {
     width: 90%;
     display: flex;
     background-color: #dddb;
+    cursor: pointer;
 }
 
 .game-type-btn:hover, .answer-btn:hover, .next-question-btn:hover {
