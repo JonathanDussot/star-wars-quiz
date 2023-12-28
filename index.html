@@ -5,11 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Google Fonts -->
-    
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap"
         rel="stylesheet">
     <title>Document</title>
@@ -43,11 +41,24 @@
                 <img id="yoda-img" src="assets/images/yoda.png" alt="A picture of Yoda" aria-label="a picture of Yoda">
             "The instructions you have here, Padawan"
             </h2>
-            <p class="instruction" >Select the sith lord you wish to face (difficulty)</p>
-            <p class="instruction" >You will receive 15 questions with 4 answers. You must choose ONE</p>
-            <p class="instruction" >You cannot change your answer after clicking</p>
-            <p class="instruction" >If you wish to restart the quiz, click on the Star Wars logo</p>
-            <p class="instruction" >Feel the force before starting, you must!</p>
+            <p class="instruction">Select the sith lord you wish to face (difficulty)</p>
+            <p class="instruction">You will receive 15 questions with 4 answers. You must choose ONE</p>
+            <p class="instruction">You cannot change your answer after clicking</p>
+            <p class="instruction">If you wish to restart the quiz, click on the Star Wars logo</p>
+            <p class="instruction">Feel the force before starting, you must!</p>
+            <div class="game-type">
+                <button class="game-type-btn" id="medium-game"><img src="assets/images/darth-maul-img.png" class="btn-img" 
+                    alt="A picture of Darth Maul for easy difficulty" 
+                    aria-label="a picture of darth maul for easy difficulty">Darth Maul (Easy)</button>
+
+                <button class="game-type-btn" id="hard-game"><img src="assets/images/darth-vader-img.png" class="btn-img" 
+                    alt="A picture of Darth Vader for medium difficulty"
+                    aria-label="a picture of darth vader for medium difficulty">Darth Vader (Medium)</button>
+
+                <button class="game-type-btn" id="very-hard-game"><img src="assets/images/darth-sidious-img.png" class="btn-img" 
+                    alt="A picture of Darth Sidious for hard difficulty"
+                    aria-label="a picture of darth sidious very hard difficulty">Darth Sidious (Hard)</button>
+            </div>
         </div>
 
         <script src="assets/js/script.js"></script>

@@ -36,7 +36,7 @@ h1 {
     height: 30vh;
     margin: 15px auto;
     padding: 20px 8px;
-    background-color: #333b;
+    background-color: #333e;
 }
 
 .answer-btn {
@@ -49,7 +49,7 @@ h1 {
 }
 
 .game-area {
-    display: none;
+    /*display: none;*/
 }
 
 .instructions-area {
@@ -77,4 +77,30 @@ h2 {
     width: 85px;
     height: 130px;
     padding-right: 8px;
+}
+
+.question-area, .answer-btn, .instructions-area, .game-type-btn {
+    border-radius: 15px;
+    border: 1.5px solid #000;
+}
+
+.game-type-btn {
+    width: 90%;
+    height: 80px;
+    margin: 5px auto;
+    background-color: #dddb;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    font-size: 1.3em;
+    font-family: 'Libre Franklin', sans-serif;
+    align-items: center;
+    font-style: oblique;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.btn-img {
+    height:100px;
+    display:block;
 }
