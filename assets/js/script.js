@@ -3,21 +3,54 @@ let medium = document.getElementById('medium-game')
 let hard = document.getElementById('hard-game')
 let instructions = document.getElementById('instructions')
 let gameContainerElement = document.getElementById('game-container')
-
 let shuffledQuestions, currentQuestionIndex
+let questionElement = document.getElementsByClassName('question')
+let answerBtnAreaElement = document.getElementsByClassName('answer-btn-area')
 
-easy.addEventListener('click', runGame)
-medium.addEventListener('click', runGame)
-hard.addEventListener('click', runGame)
+easy.addEventListener('click', runGameEasy)
+medium.addEventListener('click', runGameMedium)
+hard.addEventListener('click', runGameHard)
 
-function runGame() {
-    console.log('started')
+function runGameEasy() {
+    console.log('easystarted')
     instructions.classList.add('hide')
+    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
     gameContainerElement.classList.remove('hide')
-    displayQuestion()
+    displayEasyQuestion()
 }
 
-function displayQuestion() {
+function runGameMedium() {
+    console.log('mediumstarted')
+    instructions.classList.add('hide')
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    gameContainerElement.classList.remove('hide')
+    displayMediumQuestion()
+}
+
+function runGameHard() {
+    console.log('hardstarted')
+    instructions.classList.add('hide')
+    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    gameContainerElement.classList.remove('hide')
+    displayHardQuestion()
+}
+
+function displayEasyQuestion() {
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+}
+
+function showQuestion(question) {
+    questionElement.innerText = easyQuestions.question
+}
+
+function displayMediumQuestion() {
+
+}
+
+function displayHardQuestion() {
 
 }
 
@@ -33,19 +66,7 @@ function incrementWrongAnswer() {
 
 }
 
-function displayEasyQuestion() {
-    
-}
-
-function displayMediumQuestion() {
-
-}
-
-function displayHardQuestion() {
-
-}
-
-const questions = [
+const easyQuestions = [
     {
         question: 'What actress played Princess Leia in \'Star Wars: Return of the Jedi\'',
         answers: [
