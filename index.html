@@ -27,7 +27,7 @@
     </header>
     <!-- game-area section-->
     <main>
-        <div class="game-area">
+        <div class="game-area hide" id="game-container">
             <div class="question-area" id="question">
                 <h2 class="question">Question here!</h2>
             </div>
@@ -42,7 +42,7 @@
                 <br>
             </div>
             <div class="next-btn">
-                <button class="next-question-btn">Next Question</button>
+                <button class="next-question-btn hide" id="next-btn">Next Question</button>
             </div>
             <div class="score-area">
                 <p class="scores">Correct Answers <span id="score">0</span></p>
@@ -50,7 +50,7 @@
             </div>
         </div>
         <!-- Instructions-area section -->
-        <div class="instructions-area">
+        <div class="instructions-area" id="instructions">
             <h2>
                 <img id="yoda-img" src="assets/images/yoda.png" alt="A picture of Yoda" aria-label="a picture of Yoda">
             "The instructions you have here, Padawan. Do or do not. There is no try"
@@ -61,17 +61,17 @@
             <p class="instruction">If you wish to restart the quiz, click on the Star Wars logo</p>
             <p class="instruction">Feel the force before starting, you must!</p>
             <div class="game-type">
-                <button class="game-type-btn" id="medium-game"><img src="assets/images/darth-maul-img.png" class="btn-img" 
+                <button class="game-type-btn" id="easy-game"><img src="assets/images/darth-maul-img.png" class="btn-img" 
                     alt="A picture of Darth Maul for easy difficulty" 
                     aria-label="a picture of darth maul for easy difficulty">Darth Maul (Easy)</button>
 
-                <button class="game-type-btn" id="hard-game"><img src="assets/images/darth-vader-img.png" class="btn-img" 
+                <button class="game-type-btn" id="medium-game"><img src="assets/images/darth-vader-img.png" class="btn-img" 
                     alt="A picture of Darth Vader for medium difficulty"
                     aria-label="a picture of darth vader for medium difficulty">Darth Vader (Medium)</button>
 
-                <button class="game-type-btn" id="very-hard-game"><img src="assets/images/darth-sidious-img.png" class="btn-img" 
+                <button class="game-type-btn" id="hard-game"><img src="assets/images/darth-sidious-img.png" class="btn-img" 
                     alt="A picture of Darth Sidious for hard difficulty"
-                    aria-label="a picture of darth sidious very hard difficulty">Darth Sidious (Hard)</button>
+                    aria-label="a picture of darth sidious for hard difficulty">Darth Sidious (Hard)</button>
             </div>
         </div>
 

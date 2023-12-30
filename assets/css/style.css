@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -75,6 +75,7 @@ h1 {
     font-size: 1.3em;
     background-color: #dddb;
     cursor: pointer;
+    /*display: none;*/
 }
 
 /* instuction area styles*/
@@ -146,6 +147,10 @@ h2 {
 .btn-img {
     height:100px;
     display:block;
+}
+
+.hide {
+    display: none;
 }
 
 /* Footer styles */
