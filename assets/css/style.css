@@ -39,10 +39,6 @@ h1 {
     background-color: #333e;
 }
 
-.question {
-    justify-content: center;
-}
-
 .answer-btn {
     height: 50px;
     margin: 0 auto;
@@ -94,10 +90,13 @@ h1 {
     border: 1.5px dashed #fffb;
 }
 
-h2 {
-    padding: 5px 10px 5px 0;
+#question {
+    padding: 5px 20px 5px 20px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    font-size: 1.7em;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 #yoda-img {

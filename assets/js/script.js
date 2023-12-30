@@ -4,7 +4,7 @@ let hard = document.getElementById('hard-game')
 let instructions = document.getElementById('instructions')
 let gameContainerElement = document.getElementById('game-container')
 let shuffledQuestions, currentQuestionIndex
-let questionElement = document.getElementsByClassName('question')
+let questionElement = document.getElementById('question')
 let answerBtnAreaElement = document.getElementsByClassName('answer-btn-area')
 
 easy.addEventListener('click', runGameEasy)
@@ -43,7 +43,7 @@ function displayEasyQuestion() {
 }
 
 function showQuestion(question) {
-    questionElement.innerText = easyQuestions.question
+    questionElement.innerText = question.question
 }
 
 function displayMediumQuestion() {
