@@ -8,6 +8,9 @@ let questionElement = document.getElementById('question')
 let answerBtnAreaElement = document.getElementById('answer-btn-area')
 let nextButton = document.getElementById('next-btn')
 let resultsButton = document.getElementById('results-btn')
+let correctScore = document.getElementById('score')
+
+correctScore = 0
 
 easy.addEventListener('click', runGameEasy)
 medium.addEventListener('click', runGameMedium)
@@ -75,22 +78,36 @@ function displayHardQuestion() {
 }
 
 function selectAnswer(e) {
-    let selectedButton = e.target
-    let correct = selectedButton.dataset.correct
-        if (correct) {
-            console.log('well done!');
-            selectedButton.style.backgroundColor = "#0c0c"
-        } else {
-            console.log('damn,cuz')
-            selectedButton.style.backgroundColor = "#c00c"
-            selectedButton.style.color = "#fff"
+    let selectedButton = e.target;
+    let correctOption = selectedButton.dataset.correct === 'true'; // Assuming dataset.correct is a string
+    let allOptions = answerBtnAreaElement.children.length;
+
+    for (let i = 0; i < allOptions; i++) {
+        let currentButton = answerBtnAreaElement.children[i];
+        let isCorrect = currentButton.dataset.correct === 'true';
+
+        if (isCorrect) {
+            currentButton.style.backgroundColor = "#0c0c";
         }
-        if (shuffledQuestions.length > currentQuestionIndex + 1) {
-            nextButton.classList.remove('hide')
+
+        if (correctOption) {
+            console.log('Well done!');
+            selectedButton.style.backgroundColor = "#0c0c";
+            correctScore++;
         } else {
-            resultsButton.classList.remove('hide')
+            console.log('Oops, wrong answer!');
+            selectedButton.style.backgroundColor = "#c00c";
+            selectedButton.style.color = "#fff";
         }
+
+        currentButton.classList.add('disable');
     }
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide')
+    } else {
+        resultsButton.classList.remove('hide')
+    }
+}
 
 nextButton.addEventListener('click',() => {
     currentQuestionIndex++
@@ -125,4 +142,76 @@ const easyQuestions = [
             { text: 'white and blue', correct: true }
         ]
     },
+    {
+        question: 'Which episode number is the first Star Wars film?',
+        answers: [
+            { text: 'V', correct: false },
+            { text: 'I', correct: false },
+            { text: 'VI', correct: false },
+            { text: 'IV', correct: true }
+        ]
+    },
+    {
+        question: 'How long was Han Solo frozen for?',
+        answers: [
+            { text: 'About one month', correct: false },
+            { text: 'about two years', correct: false },
+            { text: 'About one year', correct: true },
+            { text: 'About three days', correct: false }
+        ]
+    },
+    {
+        question: 'How many "forms of communication" is C-3P0 fluent in?',
+        answers: [
+            { text: 'Only 3', correct: false },
+            { text: 'Over 6 million', correct: true },
+            { text: 'Over 100', correct: false },
+            { text: 'Over 6 thousand', correct: false }
+        ]
+    },
+    {
+        question: 'Who killed Mace Windu?',
+        answers: [
+            { text: 'Darth Vader', correct: false },
+            { text: 'Darth Dooku', correct: false },
+            { text: 'Darth Maul', correct: false },
+            { text: 'Darth Sidious', correct: true }
+        ]
+    },
+    {
+        question: 'What did Luke Skywalker lose in his fight with Darth Vader?',
+        answers: [
+            { text: 'His right arm', correct: true },
+            { text: 'His ship', correct: false },
+            { text: 'His sister', correct: false },
+            { text: 'His ability to write JavaScript!', correct: false }
+        ]
+    },
+    {
+        question: 'How many lightsabers does General Grievous wield in his fight with Obi-Wan on Utapau?',
+        answers: [
+            { text: 'Two', correct: false },
+            { text: 'Four', correct: true },
+            { text: 'Six', correct: false },
+            { text: 'One', correct: false }
+        ]
+    },
+    {
+        question: 'According to Yoda, which of these is the path to the dark side?',
+        answers: [
+            { text: 'Envy', correct: false },
+            { text: 'Loss', correct: false },
+            { text: 'Concern', correct: false },
+            { text: 'Fear', correct: true }
+        ]
+    },
+    {
+        question: 'Which James Bond actor made a cameo in \'The Force Awakens\'?',
+        answers: [
+            { text: 'Daniel Craig', correct: true },
+            { text: 'Pierce Brosnan', correct: false },
+            { text: 'Sean Connery', correct: false },
+            { text: 'Barry Nelson', correct: false }
+        ]
+    }
 ]

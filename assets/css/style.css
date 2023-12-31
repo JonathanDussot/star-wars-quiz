@@ -99,6 +99,7 @@ h1 {
     font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 1px;
+    justify-content: center;
 }
 
 #yoda-img {
@@ -155,11 +156,14 @@ h1 {
 }
 
 .correct {
-    background-color: #0c0d;
+    background-color: #0c0c;
 }
 
 .wrong {
-    background-color: #c00d;
+    background-color: #c00c;
+}
+.disable {
+    pointer-events: none;
 }
 
 /* Footer styles */
