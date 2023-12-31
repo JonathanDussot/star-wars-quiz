@@ -8,9 +8,6 @@ let questionElement = document.getElementById('question')
 let answerBtnAreaElement = document.getElementById('answer-btn-area')
 let nextButton = document.getElementById('next-btn')
 let resultsButton = document.getElementById('results-btn')
-let correctScore = document.getElementById('score')
-
-correctScore = 0
 
 easy.addEventListener('click', runGameEasy)
 medium.addEventListener('click', runGameMedium)
@@ -79,7 +76,7 @@ function displayHardQuestion() {
 
 function selectAnswer(e) {
     let selectedButton = e.target;
-    let correctOption = selectedButton.dataset.correct === 'true'; // Assuming dataset.correct is a string
+    let correctOption = selectedButton.dataset.correct === 'true';
     let allOptions = answerBtnAreaElement.children.length;
 
     for (let i = 0; i < allOptions; i++) {
@@ -89,24 +86,35 @@ function selectAnswer(e) {
         if (isCorrect) {
             currentButton.style.backgroundColor = "#0c0c";
         }
-
-        if (correctOption) {
-            console.log('Well done!');
-            selectedButton.style.backgroundColor = "#0c0c";
-            correctScore++;
-        } else {
-            console.log('Oops, wrong answer!');
-            selectedButton.style.backgroundColor = "#c00c";
-            selectedButton.style.color = "#fff";
-        }
-
         currentButton.classList.add('disable');
     }
+
+    if (correctOption) {
+        console.log('Well done!');
+        selectedButton.style.backgroundColor = "#0c0c";
+        increaseScore();
+    } else {
+        console.log('Oops, wrong answer!');
+        selectedButton.style.backgroundColor = "#c00c";
+        selectedButton.style.color = "#fff";
+        increaseIncorrect();
+    }
+    
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
         resultsButton.classList.remove('hide')
     }
+}
+
+function increaseScore() {
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+}
+
+function increaseIncorrect() {
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;
 }
 
 nextButton.addEventListener('click',() => {
