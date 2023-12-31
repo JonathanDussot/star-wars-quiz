@@ -5,7 +5,8 @@ let instructions = document.getElementById('instructions')
 let gameContainerElement = document.getElementById('game-container')
 let shuffledQuestions, currentQuestionIndex
 let questionElement = document.getElementById('question')
-let answerBtnAreaElement = document.getElementsByClassName('answer-btn-area')
+let answerBtnAreaElement = document.getElementById('answer-btn-area')
+let nextButton = document.getElementById('next-btn')
 
 easy.addEventListener('click', runGameEasy)
 medium.addEventListener('click', runGameMedium)
@@ -39,11 +40,29 @@ function runGameHard() {
 }
 
 function displayEasyQuestion() {
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+    resetState()
+    showEasyQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
-function showQuestion(question) {
+function showEasyQuestion(question) {
     questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        let button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('answer-btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerBtnAreaElement.appendChild(button);
+    }) 
+}
+
+function resetState() {
+    nextButton.classList.add('hide')
+    while (answerBtnAreaElement.firstChild) {
+        answerBtnAreaElement.removeChild(answerBtnAreaElement.firstChild)
+    }
 }
 
 function displayMediumQuestion() {
@@ -54,9 +73,19 @@ function displayHardQuestion() {
 
 }
 
-function checkAnswer() {
+function selectAnswer(e) {
+    let selectedButton = e.target
+    let correct = selectedButton.dataset.correct
+    Array.from(answerBtnAreaElement.children).forEach(button => {
+        if (correct) {
+            console.log('well done!');
+        } else {
+            console.log('damn,cuz')
+        }
 
+    })
 }
+
 
 function incrementScore() {
 
@@ -68,7 +97,7 @@ function incrementWrongAnswer() {
 
 const easyQuestions = [
     {
-        question: 'What actress played Princess Leia in \'Star Wars: Return of the Jedi\'',
+        question: 'What actress played Princess Leia in \'Star Wars: Return of the Jedi\'?',
         answers: [
             { text: 'Natalie Portman', correct: false },
             { text: 'Carrie Fisher', correct: true },

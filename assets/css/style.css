@@ -42,9 +42,9 @@ h1 {
 .answer-btn {
     height: 50px;
     margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .score-area {
@@ -94,7 +94,7 @@ h1 {
     padding: 5px 20px 5px 20px;
     display: flex;
     align-items: center;
-    font-size: 1.7em;
+    font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -152,6 +152,14 @@ h1 {
     display: none;
 }
 
+.correct {
+    background-color: #0c0d;
+}
+
+.wrong {
+    background-color: #c00d;
+}
+
 /* Footer styles */
 #footer-text {
     padding: 1rem;
@@ -181,11 +189,14 @@ h1 {
     h1{
         font-size: 3.5em;
     }
+    #question {
+        font-size: 1.7em;
+    }
 }
 
 /* media query for laptops(1024px) and larger*/
 @media screen and (min-width:1024px){
-    .answer-btn-area {
+    #answer-btn-area {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
