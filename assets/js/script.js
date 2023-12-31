@@ -129,9 +129,21 @@ resultsButton.addEventListener('click',() => {
     let scoreTotal = document.getElementById('total');
     let finalScoreElement = document.getElementById('score');
     let finalScore = parseInt(finalScoreElement.innerText)
-    let finalResult = `
-    <p>you got ${finalScore}!</p>
-    `;
+    let finalResult
+
+    if (finalScore <= 3) {
+        finalResult = `
+        <p>You got ${finalScore}!<br> "Patience you must have, my young Padawan."</p>
+        `;
+    } else if (finalScore >= 4 && finalScore <= 7) {
+        finalResult = `
+        <p>You got ${finalScore}!<br> "If no mistake have you made, yet losing you are, a different game you should play."</p>
+        `;
+    } else if (finalScore >= 8) {
+        finalResult = `
+        <p>You got ${finalScore}!<br> "Pass on what you have learned. Strength, mastery, hmm… but weakness, folly, failure, also. Yes, failure, most of all. The greatest teacher, failure is."</p>
+        `;
+    }
     scoreTotal.innerHTML = finalResult;
 })
 

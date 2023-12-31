@@ -167,7 +167,7 @@ h1 {
 }
 
 /* results area styles */
-.results-area {
+.results-area, .results-area.p {
     width: 70%;
     max-width: 400px;
     height: 100%;
