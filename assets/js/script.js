@@ -126,6 +126,7 @@ nextButton.addEventListener('click',() => {
 resultsButton.addEventListener('click',() => {
     gameContainerElement.classList.add('hide');
     resultsBox.classList.remove('hide');
+    restartButton.classList.remove('hide');
     let scoreTotal = document.getElementById('total');
     let finalScoreElement = document.getElementById('score');
     let finalScore = parseInt(finalScoreElement.innerText)
@@ -133,19 +134,25 @@ resultsButton.addEventListener('click',() => {
 
     if (finalScore <= 3) {
         finalResult = `
-        <p>You got ${finalScore}!<br> "Patience you must have, my young Padawan."</p>
+        <p id="results-message">You got ${finalScore}!<br> "Patience you must have, my young Padawan."</p>
         `;
     } else if (finalScore >= 4 && finalScore <= 7) {
         finalResult = `
-        <p>You got ${finalScore}!<br> "If no mistake have you made, yet losing you are, a different game you should play."</p>
+        <p id="results-message">You got ${finalScore}!<br> "If no mistake have you made, yet losing you are, a different game you should play."</p>
         `;
     } else if (finalScore >= 8) {
         finalResult = `
-        <p>You got ${finalScore}!<br> "Pass on what you have learned. Strength, mastery, hmm… but weakness, folly, failure, also. Yes, failure, most of all. The greatest teacher, failure is."</p>
+        <p id="results-message"> You got ${finalScore}!<br> "Pass on what you have learned. Strength, mastery, hmm… but weakness, folly, failure, also. Yes, failure, most of all. The greatest teacher, failure is."</p>
         `;
     }
     scoreTotal.innerHTML = finalResult;
 })
+
+let homePage = 'index.html';
+let restartButton = document.getElementById('restart-div');
+restartButton.addEventListener('click', () => {
+    window.location.href = homePage;
+});
 
 const easyQuestions = [
     {

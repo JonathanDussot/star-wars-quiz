@@ -63,7 +63,7 @@ h1 {
     /*display: none;*/
 }
 
-.option-btns {
+.option-btns, .restart-btn {
     display: flex;
     justify-content: center;
 }
@@ -74,6 +74,11 @@ h1 {
     font-size: 1.3em;
     background-color: #dddb;
     cursor: pointer;
+}
+
+#restart-button {
+    font-weight: 600;
+    font-size: 1.6em;
 }
 
 /* instuction area styles*/
@@ -108,7 +113,7 @@ h1 {
     padding-right: 8px;
 }
 
-.question-area, .answer-btn, .instructions-area, .game-type-btn, .next-question-btn, .results-area {
+.question-area, .answer-btn, .instructions-area, .game-type-btn, .next-question-btn, .results-area, #restart-button {
     border-radius: 15px;
     border: 1.5px solid #000;
 }
@@ -167,17 +172,37 @@ h1 {
 }
 
 /* results area styles */
-.results-area, .results-area.p {
-    width: 70%;
-    max-width: 400px;
+.results-area {
+    width: 90%;
+    max-width: 600px;
     height: 100%;
     margin: 15px auto;
-    padding: 20px 8px;
+    padding: 10px 8px;
     background-color: #333b;
+    font-size: 1.3em;
+}
+
+#results-message {
+    padding: 20px 8px;
+    background-color: #111a;
+    text-align: flex-end;
+}
+
+#yoda-res-img {
+    height: 130px;
+    position: relative;
+    left: 40px;
+}
+
+#restart-button {
+    width:70%;
+    max-width: 600px;
+    height: 50px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    font-size: 1.5em;
+    align-items: center;
+    background-color: #dddb;
+    cursor: pointer;
 }
 
 /* Footer styles */
@@ -212,6 +237,12 @@ h1 {
     #question {
         font-size: 1.7em;
     }
+    #yoda-res-img {
+        height: 150px;
+    }
+    .results-area {
+        font-size: 1.5em;
+    }
 }
 
 /* media query for laptops(1024px) and larger*/
@@ -228,5 +259,12 @@ h1 {
         display: inline-block;
         height:70px;
         margin:10px;
+    }
+
+    #yoda-res-img {
+        height:180px;
+    }
+    .results-area {
+        font-size: 1.7em;
     }
 }
