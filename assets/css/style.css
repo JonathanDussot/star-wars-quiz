@@ -108,7 +108,7 @@ h1 {
     padding-right: 8px;
 }
 
-.question-area, .answer-btn, .instructions-area, .game-type-btn, .next-question-btn {
+.question-area, .answer-btn, .instructions-area, .game-type-btn, .next-question-btn, .results-area {
     border-radius: 15px;
     border: 1.5px solid #000;
 }
@@ -164,6 +164,20 @@ h1 {
 }
 .disable {
     pointer-events: none;
+}
+
+/* results area styles */
+.results-area {
+    width: 70%;
+    max-width: 400px;
+    height: 100%;
+    margin: 15px auto;
+    padding: 20px 8px;
+    background-color: #333b;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 1.5em;
 }
 
 /* Footer styles */

@@ -8,6 +8,7 @@ let questionElement = document.getElementById('question')
 let answerBtnAreaElement = document.getElementById('answer-btn-area')
 let nextButton = document.getElementById('next-btn')
 let resultsButton = document.getElementById('results-btn')
+let resultsBox = document.getElementById('results')
 
 easy.addEventListener('click', runGameEasy)
 medium.addEventListener('click', runGameMedium)
@@ -99,7 +100,7 @@ function selectAnswer(e) {
         selectedButton.style.color = "#fff";
         increaseIncorrect();
     }
-    
+
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
@@ -122,14 +123,17 @@ nextButton.addEventListener('click',() => {
     displayEasyQuestion()
 })
 
-
-function incrementScore() {
-
-}
-
-function incrementWrongAnswer() {
-
-}
+resultsButton.addEventListener('click',() => {
+    gameContainerElement.classList.add('hide');
+    resultsBox.classList.remove('hide');
+    let scoreTotal = document.getElementById('total');
+    let finalScoreElement = document.getElementById('score');
+    let finalScore = parseInt(finalScoreElement.innerText)
+    let finalResult = `
+    <p>you got ${finalScore}!</p>
+    `;
+    scoreTotal.innerHTML = finalResult;
+})
 
 const easyQuestions = [
     {
