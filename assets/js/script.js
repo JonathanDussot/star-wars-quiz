@@ -7,6 +7,7 @@ let shuffledQuestions, currentQuestionIndex
 let questionElement = document.getElementById('question')
 let answerBtnAreaElement = document.getElementById('answer-btn-area')
 let nextButton = document.getElementById('next-btn')
+let resultsButton = document.getElementById('results-btn')
 
 easy.addEventListener('click', runGameEasy)
 medium.addEventListener('click', runGameMedium)
@@ -76,15 +77,25 @@ function displayHardQuestion() {
 function selectAnswer(e) {
     let selectedButton = e.target
     let correct = selectedButton.dataset.correct
-    Array.from(answerBtnAreaElement.children).forEach(button => {
         if (correct) {
             console.log('well done!');
+            selectedButton.style.backgroundColor = "#0c0c"
         } else {
             console.log('damn,cuz')
+            selectedButton.style.backgroundColor = "#c00c"
+            selectedButton.style.color = "#fff"
         }
+        if (shuffledQuestions.length > currentQuestionIndex + 1) {
+            nextButton.classList.remove('hide')
+        } else {
+            resultsButton.classList.remove('hide')
+        }
+    }
 
-    })
-}
+nextButton.addEventListener('click',() => {
+    currentQuestionIndex++
+    displayEasyQuestion()
+})
 
 
 function incrementScore() {
@@ -104,5 +115,14 @@ const easyQuestions = [
             { text: 'Keira Knightley', correct: false },
             { text: 'Daisy Ridley', correct: false }
         ]
-    }
+    },
+    {
+        question: 'What color is R2-D2?',
+        answers: [
+            { text: 'black and blue', correct: false },
+            { text: 'white and red', correct: false },
+            { text: 'white and green', correct: false },
+            { text: 'white and blue', correct: true }
+        ]
+    },
 ]
