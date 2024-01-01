@@ -129,7 +129,7 @@ h1 {
     background-color: #eeec;
 }
 
-.game-type-btn:active, .answer-btn:active, .next-question-btn:active {
+.game-type-btn:active, .answer-btn:active, .next-question-btn:active, #restart-button:active {
     background-color: #33fc;
 }
 
