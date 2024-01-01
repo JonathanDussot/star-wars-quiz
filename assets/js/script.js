@@ -246,3 +246,96 @@ const easyQuestions = [
         ]
     }
 ]
+
+const easyQuestions = [
+    {
+        question: 'What actress played Princess Leia in \'Star Wars: Return of the Jedi\'?',
+        answers: [
+            { text: 'Natalie Portman', correct: false },
+            { text: 'Carrie Fisher', correct: true },
+            { text: 'Keira Knightley', correct: false },
+            { text: 'Daisy Ridley', correct: false }
+        ]
+    },
+    {
+        question: 'What color is R2-D2?',
+        answers: [
+            { text: 'black and blue', correct: false },
+            { text: 'white and red', correct: false },
+            { text: 'white and green', correct: false },
+            { text: 'white and blue', correct: true }
+        ]
+    },
+    {
+        question: 'Which episode number is the first Star Wars film?',
+        answers: [
+            { text: 'V', correct: false },
+            { text: 'I', correct: false },
+            { text: 'VI', correct: false },
+            { text: 'IV', correct: true }
+        ]
+    },
+    {
+        question: 'How long was Han Solo frozen for?',
+        answers: [
+            { text: 'About one month', correct: false },
+            { text: 'about two years', correct: false },
+            { text: 'About one year', correct: true },
+            { text: 'About three days', correct: false }
+        ]
+    },
+    {
+        question: 'How many "forms of communication" is C-3P0 fluent in?',
+        answers: [
+            { text: 'Only 3', correct: false },
+            { text: 'Over 6 million', correct: true },
+            { text: 'Over 100', correct: false },
+            { text: 'Over 6 thousand', correct: false }
+        ]
+    },
+    {
+        question: 'Who killed Mace Windu?',
+        answers: [
+            { text: 'Darth Vader', correct: false },
+            { text: 'Darth Dooku', correct: false },
+            { text: 'Darth Maul', correct: false },
+            { text: 'Darth Sidious', correct: true }
+        ]
+    },
+    {
+        question: 'What did Luke Skywalker lose in his fight with Darth Vader?',
+        answers: [
+            { text: 'His right arm', correct: true },
+            { text: 'His ship', correct: false },
+            { text: 'His sister', correct: false },
+            { text: 'His ability to write JavaScript!', correct: false }
+        ]
+    },
+    {
+        question: 'How many lightsabers does General Grievous wield in his fight with Obi-Wan on Utapau?',
+        answers: [
+            { text: 'Two', correct: false },
+            { text: 'Four', correct: true },
+            { text: 'Six', correct: false },
+            { text: 'One', correct: false }
+        ]
+    },
+    {
+        question: 'According to Yoda, which of these is the path to the dark side?',
+        answers: [
+            { text: 'Envy', correct: false },
+            { text: 'Loss', correct: false },
+            { text: 'Concern', correct: false },
+            { text: 'Fear', correct: true }
+        ]
+    },
+    {
+        question: 'Which James Bond actor made a cameo in \'The Force Awakens\'?',
+        answers: [
+            { text: 'Daniel Craig', correct: true },
+            { text: 'Pierce Brosnan', correct: false },
+            { text: 'Sean Connery', correct: false },
+            { text: 'Barry Nelson', correct: false }
+        ]
+    }
+]
