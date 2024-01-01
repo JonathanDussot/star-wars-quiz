@@ -141,16 +141,22 @@ function selectAnswer(e) {
 function playCorrectSound() {
     let correctSound = document.getElementById('correct-sound');
     console.log('Correct Sound Element:', correctSound);
+
     if (correctSound) {
-        correctSound.play();
+        correctSound.play().catch(error => {
+            console.error('Error playing correct sound:', error);
+        });
     }
 }
 
 function playIncorrectSound() {
     let incorrectSound = document.getElementById('incorrect-sound');
     console.log('Incorrect Sound Element:', incorrectSound);
+
     if (incorrectSound) {
-        incorrectSound.play();
+        incorrectSound.play().catch(error => {
+            console.error('Error playing incorrect sound:', error);
+        });
     }
 }
 
