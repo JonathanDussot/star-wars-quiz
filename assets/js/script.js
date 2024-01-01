@@ -1,74 +1,89 @@
-let easy = document.getElementById('easy-game')
-let medium = document.getElementById('medium-game')
-let hard = document.getElementById('hard-game')
-let instructions = document.getElementById('instructions')
-let gameContainerElement = document.getElementById('game-container')
-let shuffledQuestions, currentQuestionIndex
-let questionElement = document.getElementById('question')
-let answerBtnAreaElement = document.getElementById('answer-btn-area')
-let nextButton = document.getElementById('next-btn')
-let resultsButton = document.getElementById('results-btn')
-let resultsBox = document.getElementById('results')
+let easy = document.getElementById('easy-game');
+let medium = document.getElementById('medium-game');
+let hard = document.getElementById('hard-game');
+let instructions = document.getElementById('instructions');
+let gameContainerElement = document.getElementById('game-container');
+let shuffledQuestions, currentQuestionIndex;
+let questionElement = document.getElementById('question');
+let answerBtnAreaElement = document.getElementById('answer-btn-area');
+let nextButton = document.getElementById('next-btn');
+let resultsButton = document.getElementById('results-btn');
+let resultsBox = document.getElementById('results');
 
-easy.addEventListener('click', runGameEasy)
-medium.addEventListener('click', runGameMedium)
-hard.addEventListener('click', runGameHard)
+easy.addEventListener('click', runGameEasy);
+medium.addEventListener('click', runGameMedium);
+hard.addEventListener('click', runGameHard);
 
 function runGameEasy() {
-    console.log('easystarted')
-    instructions.classList.add('hide')
-    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    gameContainerElement.classList.remove('hide')
-    displayEasyQuestion()
+    console.log('easystarted');
+    instructions.classList.add('hide');
+    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    gameContainerElement.classList.remove('hide');
+    displayEasyQuestion();
 }
 
 function runGameMedium() {
-    console.log('mediumstarted')
-    instructions.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    gameContainerElement.classList.remove('hide')
-    displayMediumQuestion()
+    console.log('mediumstarted');
+    instructions.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    gameContainerElement.classList.remove('hide');
+    displayMediumQuestion();
 }
 
 function runGameHard() {
-    console.log('hardstarted')
-    instructions.classList.add('hide')
-    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    gameContainerElement.classList.remove('hide')
-    displayHardQuestion()
+    console.log('hardstarted');
+    instructions.classList.add('hide');
+    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    gameContainerElement.classList.remove('hide');
+    displayHardQuestion();
 }
 
 function displayEasyQuestion() {
-    resetState()
-    showEasyQuestion(shuffledQuestions[currentQuestionIndex])
+    resetState();
+    showEasyQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 function showEasyQuestion(question) {
-    questionElement.innerText = question.question
+    questionElement.innerText = question.question;
     question.answers.forEach(answer => {
-        let button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('answer-btn')
+        let button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('answer-btn');
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer)
+        button.addEventListener('click', selectAnswer);
         answerBtnAreaElement.appendChild(button);
-    }) 
+    });
 }
 
 function resetState() {
-    nextButton.classList.add('hide')
+    nextButton.classList.add('hide');
     while (answerBtnAreaElement.firstChild) {
-        answerBtnAreaElement.removeChild(answerBtnAreaElement.firstChild)
+        answerBtnAreaElement.removeChild(answerBtnAreaElement.firstChild);
     }
 }
 
 function displayMediumQuestion() {
+    resetState();
+    showMediumQuestion(shuffledQuestions[currentQuestionIndex]);
+}
 
+function showMediumQuestion(question) {
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        let button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('answer-btn');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerBtnAreaElement.appendChild(button);
+    });
 }
 
 function displayHardQuestion() {
@@ -102,9 +117,9 @@ function selectAnswer(e) {
     }
 
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
+        nextButton.classList.remove('hide');
     } else {
-        resultsButton.classList.remove('hide')
+        resultsButton.classList.remove('hide');
     }
 }
 
@@ -118,19 +133,19 @@ function increaseIncorrect() {
     document.getElementById("incorrect").innerText = ++oldScore;
 }
 
-nextButton.addEventListener('click',() => {
-    currentQuestionIndex++
-    displayEasyQuestion()
-})
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    displayEasyQuestion();
+});
 
-resultsButton.addEventListener('click',() => {
+resultsButton.addEventListener('click', () => {
     gameContainerElement.classList.add('hide');
     resultsBox.classList.remove('hide');
     restartButton.classList.remove('hide');
     let scoreTotal = document.getElementById('total');
     let finalScoreElement = document.getElementById('score');
-    let finalScore = parseInt(finalScoreElement.innerText)
-    let finalResult
+    let finalScore = parseInt(finalScoreElement.innerText);
+    let finalResult;
 
     if (finalScore <= 3) {
         finalResult = `
@@ -146,7 +161,7 @@ resultsButton.addEventListener('click',() => {
         `;
     }
     scoreTotal.innerHTML = finalResult;
-})
+});
 
 let homePage = 'index.html';
 let restartButton = document.getElementById('restart-div');
@@ -245,97 +260,189 @@ const easyQuestions = [
             { text: 'Barry Nelson', correct: false }
         ]
     }
-]
+];
 
-const easyQuestions = [
+const mediumQuestions = [
     {
-        question: 'What actress played Princess Leia in \'Star Wars: Return of the Jedi\'?',
+        question: 'What planet is Obi-Wan Kenobi from?',
         answers: [
-            { text: 'Natalie Portman', correct: false },
-            { text: 'Carrie Fisher', correct: true },
-            { text: 'Keira Knightley', correct: false },
-            { text: 'Daisy Ridley', correct: false }
+            { text: 'Ahch-To', correct: false },
+            { text: 'Stewjon', correct: true },
+            { text: 'Endor', correct: false },
+            { text: 'Scarif', correct: false }
         ]
     },
     {
-        question: 'What color is R2-D2?',
+        question: 'What is the name of Anakin\'s stepbrother?',
         answers: [
-            { text: 'black and blue', correct: false },
-            { text: 'white and red', correct: false },
-            { text: 'white and green', correct: false },
-            { text: 'white and blue', correct: true }
+            { text: 'Owen Lars', correct: true },
+            { text: 'Wedge Antilles', correct: false },
+            { text: 'Greedo', correct: false },
+            { text: 'Wilhuff Tarkin', correct: false }
         ]
     },
     {
-        question: 'Which episode number is the first Star Wars film?',
+        question: 'What happened to Anakin Skywalker during the battle with Count Dooku?',
         answers: [
-            { text: 'V', correct: false },
-            { text: 'I', correct: false },
-            { text: 'VI', correct: false },
-            { text: 'IV', correct: true }
+            { text: 'His Master', correct: false },
+            { text: 'His honour', correct: false },
+            { text: 'He lost Padmé', correct: false },
+            { text: 'He lost his right arm', correct: true }
         ]
     },
     {
-        question: 'How long was Han Solo frozen for?',
+        question: 'Who killed Jabba?',
         answers: [
-            { text: 'About one month', correct: false },
-            { text: 'about two years', correct: false },
-            { text: 'About one year', correct: true },
-            { text: 'About three days', correct: false }
+            { text: 'Luke Skywalker', correct: false },
+            { text: 'Chewbacca', correct: false },
+            { text: 'Princess Leia', correct: true },
+            { text: 'Han Solo', correct: false }
         ]
     },
     {
-        question: 'How many "forms of communication" is C-3P0 fluent in?',
+        question: 'Who killed Jango Fett?',
         answers: [
-            { text: 'Only 3', correct: false },
-            { text: 'Over 6 million', correct: true },
-            { text: 'Over 100', correct: false },
-            { text: 'Over 6 thousand', correct: false }
+            { text: 'Obi Wan kenobi', correct: false },
+            { text: 'Mace Windu', correct: true },
+            { text: 'Boba Fett', correct: false },
+            { text: 'Yoda', correct: false }
         ]
     },
     {
-        question: 'Who killed Mace Windu?',
+        question: 'Who offered to lead the attack against the Death Star?',
         answers: [
-            { text: 'Darth Vader', correct: false },
-            { text: 'Darth Dooku', correct: false },
-            { text: 'Darth Maul', correct: false },
-            { text: 'Darth Sidious', correct: true }
+            { text: 'Princess Leia', correct: false },
+            { text: 'Luke Skywalker', correct: false },
+            { text: 'Admiral Ackbar', correct: false },
+            { text: 'Lando Calrissian', correct: true }
         ]
     },
     {
-        question: 'What did Luke Skywalker lose in his fight with Darth Vader?',
+        question: 'According to Obi-Wan, how long had the Jedi been the guardians of peace and justice in the galaxy?',
         answers: [
-            { text: 'His right arm', correct: true },
-            { text: 'His ship', correct: false },
-            { text: 'His sister', correct: false },
-            { text: 'His ability to write JavaScript!', correct: false }
+            { text: 'For more than 1,000 generations', correct: true },
+            { text: 'Since the clone wars', correct: false },
+            { text: 'For around 100 years', correct: false },
+            { text: 'For approximately 400 years', correct: false }
         ]
     },
     {
-        question: 'How many lightsabers does General Grievous wield in his fight with Obi-Wan on Utapau?',
+        question: 'How many meals does Jabba consume per day?',
         answers: [
-            { text: 'Two', correct: false },
-            { text: 'Four', correct: true },
+            { text: 'One', correct: false },
+            { text: 'Nine', correct: true },
             { text: 'Six', correct: false },
-            { text: 'One', correct: false }
+            { text: 'At least fifteen', correct: false }
         ]
     },
     {
-        question: 'According to Yoda, which of these is the path to the dark side?',
+        question: 'Who provided the voice of Darth Vader?',
         answers: [
-            { text: 'Envy', correct: false },
-            { text: 'Loss', correct: false },
-            { text: 'Concern', correct: false },
-            { text: 'Fear', correct: true }
+            { text: 'Hayden Christensen', correct: false },
+            { text: 'David Prowse', correct: false },
+            { text: 'Sebastian Shaw', correct: false },
+            { text: 'James Earl Jones', correct: true }
         ]
     },
     {
-        question: 'Which James Bond actor made a cameo in \'The Force Awakens\'?',
+        question: 'How many estimated deaths are there in the original trilogy?',
         answers: [
-            { text: 'Daniel Craig', correct: true },
-            { text: 'Pierce Brosnan', correct: false },
-            { text: 'Sean Connery', correct: false },
-            { text: 'Barry Nelson', correct: false }
+            { text: 'Approximately 2,002,795,192', correct: true },
+            { text: 'Approximately 202,795,192', correct: false },
+            { text: 'Approximately 2,795,192', correct: false },
+            { text: 'Approximately 5,002,795,192', correct: false }
         ]
     }
-]
+];
+
+const hardQuestions = [
+    {
+        question: 'Who was the first character to speak in the first Star Wars film, \'A New Hope\'?',
+        answers: [
+            { text: 'Owen Lars', correct: false },
+            { text: 'C-3PO', correct: true },
+            { text: 'Princess Leia', correct: false },
+            { text: 'Luke Skywalker', correct: false }
+        ]
+    },
+    {
+        question: 'What species is native to Endor?',
+        answers: [
+            { text: 'Gungan', correct: false },
+            { text: 'Wookiee', correct: false },
+            { text: 'Rodian', correct: false },
+            { text: 'Ewok', correct: true }
+        ]
+    },
+    {
+        question: 'Which actor is the only one who\'s appeared in every single Star Wars movie to date?',
+        answers: [
+            { text: 'Carrie Fisher (Princess Leia)', correct: false },
+            { text: 'Peter Mayhew (Chewbacca)', correct: false },
+            { text: 'Kenny Baker (R2-D2)', correct: false },
+            { text: 'Anthony Daniels (C-3PO)', correct: true }
+        ]
+    },
+    {
+        question: 'Where did the Clone Wars begin?',
+        answers: [
+            { text: 'Mustafar', correct: false },
+            { text: 'Kamino', correct: false },
+            { text: 'Geonosis', correct: true },
+            { text: 'Naboo', correct: false }
+        ]
+    },
+    {
+        question: 'Who taught Lando Calrissian how to pilot a ship?',
+        answers: [
+            { text: 'Nien Nunb', correct: false },
+            { text: 'Han Solo', correct: true },
+            { text: 'Poe Dameron', correct: false },
+            { text: 'Ezra Bridger', correct: false }
+        ]
+    },
+    {
+        question: 'What was the diameter of the first Death Star?',
+        answers: [
+            { text: '50 kilometres', correct: false },
+            { text: '150 kilometres', correct: false },
+            { text: '100 kilometres', correct: false },
+            { text: '120 kilometres', correct: true }
+        ]
+    },
+    {
+        question: 'Count Dooku was one of how many Jedi who had left the Jedi Order?',
+        answers: [
+            { text: '20', correct: true },
+            { text: '27', correct: false },
+            { text: '52', correct: false },
+            { text: '13', correct: false }
+        ]
+    },
+    {
+        question: 'What kind of weapon did Han carry?',
+        answers: [
+            { text: 'A BlasTech DL-22', correct: false },
+            { text: 'A DL-44 pistol', correct: true },
+            { text: 'A SE-14C blaster pistol', correct: false },
+            { text: 'A 434 DeathHammer blaster pistol', correct: false }
+        ]
+    },
+    {
+        question: 'How old was Padmé when she was elected the Queen of Naboo?',
+        answers: [
+            { text: '15', correct: false },
+            { text: '18', correct: false },
+            { text: '9', correct: false },
+            { text: '14', correct: true }
+        ]
+    },
+    {
+        question: 'On what planet did Han accept Chewbacca as his partner?',
+        answers: [
+            { text: 'Devaron', correct: true },
+            { text: 'Lothal', correct: false },
+            { text: 'Jedha', correct: false },
+            { text: 'Kamino', correct: false }
+        ]
+    };
