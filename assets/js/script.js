@@ -121,13 +121,13 @@ function selectAnswer(e) {
     }
 
     if (correctOption) {
-        console.log('Well done!');
         selectedButton.style.backgroundColor = "#0c0c";
+        playCorrectSound();
         increaseScore();
     } else {
-        console.log('Oops, wrong answer!');
         selectedButton.style.backgroundColor = "#c00c";
         selectedButton.style.color = "#fff";
+        playIncorrectSound();
         increaseIncorrect();
     }
 
@@ -135,6 +135,22 @@ function selectAnswer(e) {
         nextButton.classList.remove('hide')
     } else {
         resultsButton.classList.remove('hide')
+    }
+}
+
+function playCorrectSound() {
+    let correctSound = document.getElementById('correct-sound');
+    console.log('Correct Sound Element:', correctSound);
+    if (correctSound) {
+        correctSound.play();
+    }
+}
+
+function playIncorrectSound() {
+    let incorrectSound = document.getElementById('incorrect-sound');
+    console.log('Incorrect Sound Element:', incorrectSound);
+    if (incorrectSound) {
+        incorrectSound.play();
     }
 }
 
