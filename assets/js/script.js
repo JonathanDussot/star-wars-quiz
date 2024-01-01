@@ -1,78 +1,97 @@
-let easy = document.getElementById('easy-game');
-let medium = document.getElementById('medium-game');
-let hard = document.getElementById('hard-game');
-let instructions = document.getElementById('instructions');
-let gameContainerElement = document.getElementById('game-container');
-let shuffledQuestions, currentQuestionIndex;
-let questionElement = document.getElementById('question');
-let answerBtnAreaElement = document.getElementById('answer-btn-area');
-let nextButton = document.getElementById('next-btn');
-let resultsButton = document.getElementById('results-btn');
-let resultsBox = document.getElementById('results');
+let easy = document.getElementById('easy-game')
+let medium = document.getElementById('medium-game')
+let hard = document.getElementById('hard-game')
+let instructions = document.getElementById('instructions')
+let gameContainerElement = document.getElementById('game-container')
+let shuffledQuestions, currentQuestionIndex
+let questionElement = document.getElementById('question')
+let answerBtnAreaElement = document.getElementById('answer-btn-area')
+let nextButton = document.getElementById('next-btn')
+let resultsButton = document.getElementById('results-btn')
+let resultsBox = document.getElementById('results')
 
-easy.addEventListener('click', runGameEasy);
-medium.addEventListener('click', runGameMedium);
-hard.addEventListener('click', runGameHard);
+easy.addEventListener('click', runGameEasy)
+medium.addEventListener('click', runGameMedium)
+hard.addEventListener('click', runGameHard)
 
 function runGameEasy() {
-    console.log('easystarted');
-    instructions.classList.add('hide');
-    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
-    gameContainerElement.classList.remove('hide');
-    displayEasyQuestion();
+    console.log('easystarted')
+    instructions.classList.add('hide')
+    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    gameContainerElement.classList.remove('hide')
+    displayEasyQuestion()
 }
 
 function runGameMedium() {
-    console.log('mediumstarted');
-    instructions.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
-    gameContainerElement.classList.remove('hide');
-    displayMediumQuestion();
+    console.log('mediumstarted')
+    instructions.classList.add('hide')
+    shuffledQuestions = mediumQuestions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    gameContainerElement.classList.remove('hide')
+    displayMediumQuestion()
 }
 
 function runGameHard() {
-    console.log('hardstarted');
-    instructions.classList.add('hide');
-    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
-    gameContainerElement.classList.remove('hide');
-    displayHardQuestion();
+    console.log('hardstarted')
+    instructions.classList.add('hide')
+    shuffledQuestions = hardQuestions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    gameContainerElement.classList.remove('hide')
+    displayHardQuestion()
 }
 
 function displayEasyQuestion() {
-    resetState();
-    showEasyQuestion(shuffledQuestions[currentQuestionIndex]);
+    resetState()
+    showEasyQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
 function showEasyQuestion(question) {
-    questionElement.innerText = question.question;
+    questionElement.innerText = question.question
     question.answers.forEach(answer => {
-        let button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('answer-btn');
+        let button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('answer-btn')
         if (answer.correct) {
-            button.dataset.correct = answer.correct;
+            button.dataset.correct = answer.correct
         }
-        button.addEventListener('click', selectAnswer);
+        button.addEventListener('click', selectAnswer)
         answerBtnAreaElement.appendChild(button);
-    });
+    }) 
 }
 
 function resetState() {
-    nextButton.classList.add('hide');
+    nextButton.classList.add('hide')
     while (answerBtnAreaElement.firstChild) {
-        answerBtnAreaElement.removeChild(answerBtnAreaElement.firstChild);
+        answerBtnAreaElement.removeChild(answerBtnAreaElement.firstChild)
     }
 }
 
 function displayMediumQuestion() {
-    resetState();
-    showMediumQuestion(shuffledQuestions[currentQuestionIndex]);
+    resetState()
+    showMediumQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
 function showMediumQuestion(question) {
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        let button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('answer-btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerBtnAreaElement.appendChild(button);
+    }) 
+}
+
+function displayHardQuestion() {
+    resetState();
+    showHardQuestion(shuffledQuestions[currentQuestionIndex]);
+}
+
+function showHardQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
         let button = document.createElement('button');
@@ -84,10 +103,6 @@ function showMediumQuestion(question) {
         button.addEventListener('click', selectAnswer);
         answerBtnAreaElement.appendChild(button);
     });
-}
-
-function displayHardQuestion() {
-
 }
 
 function selectAnswer(e) {
@@ -117,9 +132,9 @@ function selectAnswer(e) {
     }
 
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide');
+        nextButton.classList.remove('hide')
     } else {
-        resultsButton.classList.remove('hide');
+        resultsButton.classList.remove('hide')
     }
 }
 
@@ -133,19 +148,19 @@ function increaseIncorrect() {
     document.getElementById("incorrect").innerText = ++oldScore;
 }
 
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    displayEasyQuestion();
-});
+nextButton.addEventListener('click',() => {
+    currentQuestionIndex++
+    displayEasyQuestion()
+})
 
-resultsButton.addEventListener('click', () => {
+resultsButton.addEventListener('click',() => {
     gameContainerElement.classList.add('hide');
     resultsBox.classList.remove('hide');
     restartButton.classList.remove('hide');
     let scoreTotal = document.getElementById('total');
     let finalScoreElement = document.getElementById('score');
-    let finalScore = parseInt(finalScoreElement.innerText);
-    let finalResult;
+    let finalScore = parseInt(finalScoreElement.innerText)
+    let finalResult
 
     if (finalScore <= 3) {
         finalResult = `
@@ -161,7 +176,7 @@ resultsButton.addEventListener('click', () => {
         `;
     }
     scoreTotal.innerHTML = finalResult;
-});
+})
 
 let homePage = 'index.html';
 let restartButton = document.getElementById('restart-div');
@@ -260,7 +275,7 @@ const easyQuestions = [
             { text: 'Barry Nelson', correct: false }
         ]
     }
-];
+]
 
 const mediumQuestions = [
     {
@@ -353,7 +368,7 @@ const mediumQuestions = [
             { text: 'Approximately 5,002,795,192', correct: false }
         ]
     }
-];
+]
 
 const hardQuestions = [
     {
@@ -445,4 +460,5 @@ const hardQuestions = [
             { text: 'Jedha', correct: false },
             { text: 'Kamino', correct: false }
         ]
-    };
+    }
+]
