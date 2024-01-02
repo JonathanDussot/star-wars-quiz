@@ -20,7 +20,6 @@ hard.addEventListener('click', runGameHard)
  * provided in the credits section of README.md
  */
 function runGameEasy() {
-    console.log('easystarted')
     instructions.classList.add('hide')
     shuffledQuestions = easyQuestions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -33,7 +32,6 @@ function runGameEasy() {
  * provided in the credits section of README.md
  */
 function runGameMedium() {
-    console.log('mediumstarted')
     instructions.classList.add('hide')
     shuffledQuestions = mediumQuestions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -46,7 +44,6 @@ function runGameMedium() {
  * provided in the credits section of README.md
  */
 function runGameHard() {
-    console.log('hardstarted')
     instructions.classList.add('hide')
     shuffledQuestions = hardQuestions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -75,6 +72,7 @@ function showEasyQuestion(question) {
         button.addEventListener('click', selectAnswer)
         answerBtnAreaElement.appendChild(button);
     }) 
+}
 /**hides next button again and returns answer boxes to original state before and replacing 
  * original buttons from HTML
  */
