@@ -14,6 +14,12 @@ easy.addEventListener('click', runGameEasy)
 medium.addEventListener('click', runGameMedium)
 hard.addEventListener('click', runGameHard)
 
+function gamestartSound() {
+    let gamestart = document.getElementById('gamestart-sound');
+    gamestart.volume=0.5;
+    gamestart.play();
+}
+
 function runGameEasy() {
     console.log('easystarted')
     instructions.classList.add('hide')
@@ -109,7 +115,7 @@ function selectAnswer(e) {
     let selectedButton = e.target;
     let correctOption = selectedButton.dataset.correct === 'true';
     let allOptions = answerBtnAreaElement.children.length;
-
+    
     for (let i = 0; i < allOptions; i++) {
         let currentButton = answerBtnAreaElement.children[i];
         let isCorrect = currentButton.dataset.correct === 'true';
@@ -122,12 +128,10 @@ function selectAnswer(e) {
 
     if (correctOption) {
         selectedButton.style.backgroundColor = "#0c0c";
-        playCorrectSound();
         increaseScore();
     } else {
         selectedButton.style.backgroundColor = "#c00c";
         selectedButton.style.color = "#fff";
-        playIncorrectSound();
         increaseIncorrect();
     }
 
@@ -135,28 +139,6 @@ function selectAnswer(e) {
         nextButton.classList.remove('hide')
     } else {
         resultsButton.classList.remove('hide')
-    }
-}
-
-function playCorrectSound() {
-    let correctSound = document.getElementById('correct-sound');
-    console.log('Correct Sound Element:', correctSound);
-
-    if (correctSound) {
-        correctSound.play().catch(error => {
-            console.error('Error playing correct sound:', error);
-        });
-    }
-}
-
-function playIncorrectSound() {
-    let incorrectSound = document.getElementById('incorrect-sound');
-    console.log('Incorrect Sound Element:', incorrectSound);
-
-    if (incorrectSound) {
-        incorrectSound.play().catch(error => {
-            console.error('Error playing incorrect sound:', error);
-        });
     }
 }
 
