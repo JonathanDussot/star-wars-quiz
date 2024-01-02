@@ -1,3 +1,4 @@
+/*Declaration of various variables*/
 let easy = document.getElementById('easy-game')
 let medium = document.getElementById('medium-game')
 let hard = document.getElementById('hard-game')
@@ -9,17 +10,15 @@ let answerBtnAreaElement = document.getElementById('answer-btn-area')
 let nextButton = document.getElementById('next-btn')
 let resultsButton = document.getElementById('results-btn')
 let resultsBox = document.getElementById('results')
-
+/*Game-type event listeners to determine which code and questions to use.*/
 easy.addEventListener('click', runGameEasy)
 medium.addEventListener('click', runGameMedium)
 hard.addEventListener('click', runGameHard)
-
-function gamestartSound() {
-    let gamestart = document.getElementById('gamestart-sound');
-    gamestart.volume=0.5;
-    gamestart.play();
-}
-
+/**
+ * Starts easy game, provides questions in a random order.
+ * Majority of code used from YouTube tutorial from Web Dev Simplified
+ * provided in the credits section of README.md
+ */
 function runGameEasy() {
     console.log('easystarted')
     instructions.classList.add('hide')
@@ -28,7 +27,11 @@ function runGameEasy() {
     gameContainerElement.classList.remove('hide')
     displayEasyQuestion()
 }
-
+/**
+ * Starts medium game, provides questions in a random order.
+ * Majority of code used from YouTube tutorial from Web Dev Simplified
+ * provided in the credits section of README.md
+ */
 function runGameMedium() {
     console.log('mediumstarted')
     instructions.classList.add('hide')
@@ -37,7 +40,11 @@ function runGameMedium() {
     gameContainerElement.classList.remove('hide')
     displayMediumQuestion()
 }
-
+/**
+ * Starts hard game, provides questions in a random order.
+ * Majority of code used from YouTube tutorial from Web Dev Simplified
+ * provided in the credits section of README.md
+ */
 function runGameHard() {
     console.log('hardstarted')
     instructions.classList.add('hide')
@@ -46,7 +53,11 @@ function runGameHard() {
     gameContainerElement.classList.remove('hide')
     displayHardQuestion()
 }
-
+/**
+ * Starts to display easyQuestions
+ * some code used from YouTube tutorial from Web Dev Simplified
+ * provided in the credits section of README.md
+ */
 function displayEasyQuestion() {
     resetState()
     showEasyQuestion(shuffledQuestions[currentQuestionIndex])
@@ -64,15 +75,20 @@ function showEasyQuestion(question) {
         button.addEventListener('click', selectAnswer)
         answerBtnAreaElement.appendChild(button);
     }) 
-}
-
+/**hides next button again and returns answer boxes to original state before and replacing 
+ * original buttons from HTML
+ */
 function resetState() {
     nextButton.classList.add('hide')
     while (answerBtnAreaElement.firstChild) {
         answerBtnAreaElement.removeChild(answerBtnAreaElement.firstChild)
     }
 }
-
+/**
+ * Starts to display mediumQuestions
+ * some code used from YouTube tutorial from Web Dev Simplified
+ * provided in the credits section of README.md
+ */
 function displayMediumQuestion() {
     resetState()
     showMediumQuestion(shuffledQuestions[currentQuestionIndex])
@@ -91,7 +107,11 @@ function showMediumQuestion(question) {
         answerBtnAreaElement.appendChild(button);
     }) 
 }
-
+/**
+ * Starts to display hardQuestions
+ * some code used from YouTube tutorial from Web Dev Simplified
+ * provided in the credits section of README.md
+ */
 function displayHardQuestion() {
     resetState();
     showHardQuestion(shuffledQuestions[currentQuestionIndex]);
@@ -110,7 +130,11 @@ function showHardQuestion(question) {
         answerBtnAreaElement.appendChild(button);
     });
 }
-
+/**
+ * Starts to display hardQuestions
+ * some code used from YouTube tutorial from Web Dev Simplified
+ * provided in the credits section of README.md
+ */
 function selectAnswer(e) {
     let selectedButton = e.target;
     let correctOption = selectedButton.dataset.correct === 'true';
@@ -128,9 +152,11 @@ function selectAnswer(e) {
 
     if (correctOption) {
         selectedButton.style.backgroundColor = "#0c0c";
+        /*selectedButton.addEventListener('click', playCorrectSound);*/
         increaseScore();
     } else {
         selectedButton.style.backgroundColor = "#c00c";
+        /*selectedButton.addEventListener('click', playIncorrectSound);*/
         selectedButton.style.color = "#fff";
         increaseIncorrect();
     }
@@ -142,6 +168,18 @@ function selectAnswer(e) {
     }
 }
 
+/**function playCorrectSound() {
+    let correctSound = document.getElementById('correct-sound');
+    correctSound.play();
+    console.log('well is it working?')
+}
+
+function playIncorrectSound() {
+    let incorrectSound = document.getElementById('incorrect-sound');
+    incorrectSound.play();
+}*/
+
+/*Functions to increase scores, taken from Love Maths Walkthrough*/
 function increaseScore() {
     let oldScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++oldScore;
@@ -151,12 +189,14 @@ function increaseIncorrect() {
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++oldScore;
 }
-
+/*function for 'next button' */
 nextButton.addEventListener('click',() => {
     currentQuestionIndex++
     displayEasyQuestion()
 })
-
+/**
+ * leads to the results section, displaying feedback results and messages
+ */
 resultsButton.addEventListener('click',() => {
     gameContainerElement.classList.add('hide');
     resultsBox.classList.remove('hide');
@@ -181,13 +221,13 @@ resultsButton.addEventListener('click',() => {
     }
     scoreTotal.innerHTML = finalResult;
 })
-
+/*Restart button function to take user back to the first page*/
 let homePage = 'index.html';
 let restartButton = document.getElementById('restart-div');
 restartButton.addEventListener('click', () => {
     window.location.href = homePage;
 });
-
+ /*Easy set of Questions*/
 const easyQuestions = [
     {
         question: 'What actress played Princess Leia in \'Star Wars: Return of the Jedi\'?',
@@ -280,7 +320,7 @@ const easyQuestions = [
         ]
     }
 ]
-
+/*Medium set of Questions*/
 const mediumQuestions = [
     {
         question: 'What planet is Obi-Wan Kenobi from?',
@@ -373,7 +413,7 @@ const mediumQuestions = [
         ]
     }
 ]
-
+/*hard set of Questions*/
 const hardQuestions = [
     {
         question: 'Who was the first character to speak in the first Star Wars film, \'A New Hope\'?',
