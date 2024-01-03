@@ -124,6 +124,13 @@ The page is responsive and contains:
 
 ![screenshot of results page](documentation/sw-results-page.png)
 
+- Sound Effects
+  - sdsdsdsdsdsds
+
+
+
+
+
 ### Future Implementations
 
 ideas for future implementations I would like to include are:
