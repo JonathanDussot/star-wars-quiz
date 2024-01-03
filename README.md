@@ -127,6 +127,9 @@ The page is responsive and contains:
 - Sound Effects
   - sdsdsdsdsdsds
 
+- Question counter
+  - sdsdsdsdsdsds
+
 
 
 
@@ -135,9 +138,9 @@ The page is responsive and contains:
 
 ideas for future implementations I would like to include are:
 
-1. A simple login functionality for them to be able to review their previous bookings and document some of their personal information such as a contact number should we need to call them.
-2. Advertisement of offers/ open tournaments where many players can socialise and share their love of the game.
-3. A bulletin section to report and celebrate achievements by children in the Kids Club with their parents' permission.
+1. A feature to request usernames and provide users with a list of highest scores for the users to compete with.
+2. A multi-player feature for participants to compete remotely head-to-head on different devices along with the possibility for them to challenge participants to these head-to-head games.
+3. Another multi-player feature mode that will allow players to compete locally in teams to provide users with a fun party game.
 
 ### Accessibility
 
@@ -156,7 +159,7 @@ WAVE displays an error within the navbar stating there is no aria-label.  Howeve
 
 ### Languages Used
 
-The languages used for the website include HTML and CSS.
+The languages used for the website include HTML, CSS and JavaScript.
 
 ### Libraries and Programs Used
 
@@ -198,7 +201,7 @@ The site is deployed using GitHub Pages. To deploy using GitHub pages:
 6. Click "Save", then wait for it to be deployed. It can take some time for the page to be fully deployed.
 7. Your URL will be displayed above "Source".
 
-You can visit the website [here](https://jonathandussot.github.io/valladolid-snooker-club/)
+You can visit the website [here](https://github.com/JonathanDussot/star-wars-quiz)
 
 ### Local Deployment
 
