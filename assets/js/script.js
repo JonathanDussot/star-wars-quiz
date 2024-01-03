@@ -341,8 +341,8 @@ const mediumQuestions = [
     {
         question: 'What happened to Anakin Skywalker during the battle with Count Dooku?',
         answers: [
-            { text: 'His Master', correct: false },
-            { text: 'His honour', correct: false },
+            { text: 'He lost his Master', correct: false },
+            { text: 'He lost his honour', correct: false },
             { text: 'He lost Padmé', correct: false },
             { text: 'He lost his right arm', correct: true }
         ]
