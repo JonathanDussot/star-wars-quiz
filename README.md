@@ -92,8 +92,6 @@ I created this Intelligent Diagram using Lucid Chart
 
 ### General Features on each page
 
-The website consists of .
-
 The page is responsive and contains:
 
 - Favicon of the Website
@@ -101,37 +99,30 @@ The page is responsive and contains:
 
 ![screenshot of the favicon](documentation/favicon-star-wars.png)
 
-- Footer
-  - Fully responsive with links that open on a new tab.
-
-![screenshot of the footer](documentation/footer-img.png)
-
 - Landing Page
-  - This would be the first page the user would see, introducing the theme with the image and introductory phrase designed to catch their attention, while offering a glimpse of the benefits/ reasons section that follows as can be seen on the bigger screens.
+  - This would be the first page the user would see, introducing the theme with an image, bakkground image and the instructions explaining how to play the game, clearly stating there are three levels of difficulty.
 
-![screenshot of amiresponsive main page](documentation/amiresponsive-snooker-img.png)
+![screenshot of main page](documentation/sw-landing-page.png)
 
-- Interactive map
-  - A map is included within the page to allow users to locate the venue and explore the area around it. Users are given the option to move the map and zoom in and out.
+- Different levels of difficulty
+  - Here users are given an exciting presentation to the aforementioned three levels so they may visualise the difficulty based on the villain they can select, this is achieved with the help of transparent png-format images and names of well-known villains to face.
 
-![screenshot of amiresponsive map on home page](documentation/amiresponsive-map.png)
+![screenshot of difficulty levels on main page](documentation/sw-game-levels.png)
 
-- Form on Bookings page
-  - A fully responsive form with a button to submit and another to cancel.  The button to submit user's information takes them to a confirmation page as can be seen in the second screenshot, whereas the cancel button would automatically leave all input fields empty again.
+- Questions Display
+  - This image shows how users on differently-sized screens have the possibility of seeing questions and answers on the same screen.
 
-![screenshot of form and buttons on Bookings page](documentation/amiresponsive-bookings-form-and-button.png)
-![screenshot of submitted form](documentation/submit-bookings.png)
+![screenshot of questions on different screens](documentation/sw-questions-page-diff-screens.png)
 
-- Media video on Kids Club page
-  - This embedded YouTube video on our kids club page shares the screen horizontally once the screen is 992px or larger.  IT is not set to autoplay and the controls work well in all screen sizes.
+- Questions Display with a selected answer
+  - Once the user selects an answer, different colours are displayed to show if they were correct.  The user is also given a 'next' button which allows the user to go onto the next question.
 
-![screenshot of video on Kids Club page](documentation/amiresponsive-video.png)
+![screenshot of question answered](documentation/sw-questions-page-answered.png)
 
-- Form on Kids Club page
-  - A fully responsive form with a button to submit and another to cancel.  The button to submit user's information takes them to a confirmation page as can be seen in the second screenshot, whereas the cancel button would automatically leave all input fields empty again.
+- Results Page
+  - A screen will appear with the user's total score along with a feedback message which varies depending on the range of questions correctly answered. The message is worded in a particularly order to resemble Yoda's speech, who can be seen in the image.  This is to give the user the full experience of being immersed in the _Star Wars_ universe.
 
-![screenshot of form and buttons on Kids Club page](documentation/amiresponsive-kids-form-and-button.png)
-![screenshot of submitted form](documentation/submit-kidsclub.png)
+![screenshot of results page](documentation/sw-results-page.png)
 
 ### Future Implementations
 
