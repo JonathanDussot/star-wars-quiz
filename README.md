@@ -18,7 +18,6 @@ You can visit the GitHub Repository [here](https://github.com/JonathanDussot/sta
 
 ## CONTENTS
 
-
 ## User Experience (UX)
 
 ### Common Usage
@@ -42,7 +41,7 @@ I designed the colour palette for the website myself. I only used [colormind.io]
 
 ![screenshot of primary colours on colormind.io](documentation/colormind-colours.png)
 
-- #111111, #333333, #dddddd, #eeeeee 
+- #111111, #333333, #dddddd, #eeeeee
 
   - These colours were quite basic shades between black, grey and white.  The reason being for this is that it suited the theme of _Star Wars_ perfectly, as I gave each colour a certain degree of transparency depending on the element it was used on, so that the background image of outerspace, which also happens to be black and white, can be fully appreciated at all times.
 
@@ -68,27 +67,22 @@ I created these wireframes using Balsamiq.
 
 This is the home page with the instructions.  Some minor changes were made in terms of the buttons available to start running the quiz.
 
-![screenshot of home page on Balsamiq](documentation/)
+![screenshot of home page on Balsamiq](documentation/star-wars-quiz-wireframe-1.png)
 
 #### Quiz Questions
 
-An example of the questions and answers shown.
+An example of the questions and answers shown. The image to the right shows the reaction upon the user's interaction to an answer.
 
-![screenshot of quiz questions on Balsamiq](documentation/)
-
-#### Quiz Questions(Answered)
-
-This image shows the reaction upon the user's interaction to an answer.
-
-![screenshot of quiz question when answered on Balsamiq](documentation/)
+![screenshot of quiz questions on Balsamiq](documentation/star-wars-quiz-wireframe-2.png)
 
 #### Results Page
 
-A screenshot with the results of the quiz.
+A screenshot with the results of the quiz with the option to restart the quiz which takes the user back to the home page.
 
-![screenshot of results page on Balsamiq](documentation/)
-
+![screenshot of results page on Balsamiq](documentation/star-wars-quiz-wireframe-3.png)
 
 ### Intelligent Diagramming chart
 
 I created this Intelligent Diagram using Lucid Chart
+
+![screenshot of results page on Lucidchart](documentation/diagram-img.png)
