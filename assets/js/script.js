@@ -112,7 +112,9 @@ function selectAnswer(e) {
 
     if (correctOption) {
         selectedButton.style.backgroundColor = "#0c0c";
-        /*selectedButton.addEventListener('click', playCorrectSound);*/
+        secetedButton.onclick = function () {
+            correctSound();
+        }
         increaseScore();
     } else {
         selectedButton.style.backgroundColor = "#c00c";
@@ -129,6 +131,7 @@ function selectAnswer(e) {
 }
 
 /**function playCorrectSound() {
+    
     let correctSound = document.getElementById('correct-sound');
     correctSound.play();
     console.log('well is it working?')
@@ -149,6 +152,18 @@ function increaseIncorrect() {
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++oldScore;
 }
+
+function playCorrectSound() {
+    let correctSound = document.getElementById('correct-sound');
+    correctSound.play();
+}
+
+function gamestartSound() {
+    let gamestart = document.getElementById('gamestart-sound');
+    gamestart.volume = 0.2;
+    gamestart.play();
+}
+
 /*function for 'next button' */
 nextButton.addEventListener('click',() => {
     currentQuestionIndex++;

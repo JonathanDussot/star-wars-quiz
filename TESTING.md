@@ -75,21 +75,21 @@ And these are the results on a mobile screen:
 
 #### Button Testing
 
-| Description | expected results | Did it result correctly? |
-|---|---|---|
-|Hovering over buttons.| The button changes colour to detect the mouse hovering over it.| Yes |
-|Selecting buttons.| The button changes colour to detect the mouse hovering over it.| Yes |
-|Sound once game difficulty is selected.| The button triggers the gamestart-sound.mp3.| Yes |
-|Selected game questions displayed.| Each game difficulty button leads to a seperate string of questions.| Yes |
-|Answer Selection.| Correct and incorrect options are highlighted in different colours before then displaying the next button.| Yes |
-|Next button function.| The next button leads to a randomly shuffled question within the same question string.| Yes |
-|Results page button.| The button leads to the results page with the amount of correct answers and a customized feedback message.| Yes |
-|Restart quiz.| The restart button leads to the home page with the instructions and game difficulties.| Yes |
-|Star Wars logo.|  The logo leads to the home page with the instructions and game difficulties| Yes |
+| Items being tested | Actions taken to test | Expected result | Outcome |
+|---|---|---|---|
+|Button - Hover.| Moved mouse over button.| The button changes colour (#eeec) to detect the mouse hovering over it. | :white_check_mark: |
+|Buttons - Select.| Clicked on button | The button changes colour (#33fc) to detect the mouse clicking on it.| :white_check_mark: |
+|Game-type button - Sound| Clicked on game-type button | The button triggers the gamestart-sound.mp3 upon being clicked.| :white_check_mark: |
+|Game-type Buttons - link to string| Clicked on each. | Each game-type button leads to their respective string of questions.| :white_check_mark: |
+|Answer button - Select.| Clicked on an answer button | Correct and incorrect options are highlighted in different colours before then displaying the next button.| :white_check_mark: |
+|Next button - function.| Clicked on the 'next button' | The next button leads to a randomly shuffled question within the same question string.| :white_check_mark: |
+|Results page button.| Clicked on results page button | The button leads to the results page with the amount of correct answers and a customized feedback message.| :white_check_mark: |
+|Restart quiz button.| Clicked on the 'restart quiz' button | The restart button leads to the home page with the instructions and game difficulties.| :white_check_mark: |
+|Star Wars logo.| Clicked on the _Star Wars_ logo | The logo leads to the home page with the instructions and game-type difficulties| :white_check_mark: |
 
 #### Browser Testing
 
-| Description | expected results | Did it result correctly? |
+| Items being tested | expected results | Did it result correctly? |
 |---|---|---|
 |Testing the page's functionality on different Browsers.| The page works with no errors at all on different browsers.| Yes- tested on Google Chrome and Microsoft Edge. |
 |Testing the page's functionality regariding different sizing.| The page returns no errors upon adjusting screen sizes.| Yes- screen was re-adjusted on Google DevTools to verify all sizes. |
