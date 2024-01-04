@@ -203,8 +203,12 @@ h1 {
 
 /* Footer styles */
 #footer-text {
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
+}
+
+footer {
+    background-color: black;
 }
 
 /* media query for small phones (320px) and larger */

@@ -17,10 +17,10 @@ You can visit the website [here](https://jonathandussot.github.io/star-wars-quiz
   - [Lighthouse](#lighthouse)
   - [Manual Testing](#manual-testing)
     - [Testing User Stories](#testing-user-stories)
-      - [First Time Visitors](#first-time-visitors)
-      - [First time Carers interested in Kids Club sessions](#first-time-carers-interested-in-kids-club-sessions)
-      - [Existing Members](#existing-members)
-    - [Full Testing](#full-testing)
+      - [User Stories](#user-stories)
+    - [Functionality tests](#functionality-tests)
+      - [Button Testing](#button-testing)
+      - [Browser Testing](#browser-testing)
   - [Solved Bugs](#solved-bugs)
 
 ## W3C Validator
@@ -42,7 +42,7 @@ I used JSHint to validate the JavaScript code from my page. Results can be seen 
 
 ## Wave
 
-I used WAVE to verify the performance of the site. All tests passed on the page with the exception mentioned in the accessibility section.
+I used WAVE to verify the performance of the site. All tests passed on the page.
 
 ![screenshot of performance on WAVE](documentation/sw-wave-screenshot.png)
 
@@ -50,53 +50,49 @@ I used WAVE to verify the performance of the site. All tests passed on the page 
 
 I used lighthouse in Google DevTools to verify the site passed all tests.These are the results on a Desktop:
 
-![screenshot of performance on Lighthouse for desktop](documentation/sw-lighthouse-1.png)(documentation/sw-lighthouse-2.png)
+![screenshot of performance on Lighthouse for desktop](documentation/sw-lighthouse-1.png)
+![more details](documentation/sw-lighthouse-2.png)
 
 And these are the results on a mobile screen:
 
-![screenshot of performance on Lighthouse for mobile](documentation/sw-lighthouse-mobile-1.png)(documentation/sw-lighthouse-mobile-2.png)
+![screenshot of performance on Lighthouse for mobile](documentation/sw-lighthouse-mobile-1.png)
+![more details](documentation/sw-lighthouse-mobile-2.png)
 
 ## Manual Testing
 
 ### Testing User Stories
 
-#### First Time Visitors
+#### User Stories
 
 | Goal | How is this achieved? |
 |---|---|
-|I want to find out about the club, its prices, its variety of services and how to sign up.| The home page provides this information and how to contact us.|
-|I want to be able to navigate through the website and easily find the information I am looking for.| The NavBar provides easy navigation to all areas of the website. |
-|I want to learn more about the hobby through its benefits and the possibility of acquiring personal coaching sessions.| The home page gives information of the benefits of the sport as well as information on Coaching Lesson's times and prices.|
-|I want to find the club's location and have easy access to contact information should I need it.| This is also found at the bottom of the home page with contact information and a map provided by Google Maps.|
+|I want to put my knowledge to the test in this particular topic.| The quiz offers many questions ranging from the oldest to the newest trilogy in the saga.|
+|I want to be able to choose a level of difficulty that is suitable to me.| The quiz provides users with three different difficulties for them to test their knowledge. |
+|I want to be able to easily navigate through the page and understand clearly its different functions and information presented to me.| The home page gives information through the instructions of how to navigate through the quiz.|
+|I want it to be dynamic and fun so I can enjoy myself either alone or in the company of my friends whilst going through the quiz.| A variety of dynamic functions are included such as sounds and images of characters within the _Str Wars_ universe. Other functions to make the game more dynamic among friends will be implemented in future implementations.|
 
-#### First time Carers interested in Kids Club sessions
+### Functionality tests
 
-| Goal | How is this achieved? |
-|---|---|
-|I want to find out more information as to who will be coaching my child.| The Kids Club page gives information regarding the coach handling Kids Club.|
-|I want to feel comfortable knowing they are in a secure and responsible club which has their best interests in mind.| A brief introduction is given to display our level of standards and professionalism.|
-|I want to get the schedule of the sessions and determine its convenience according to my child's school timetable.| The coaching days & times can clearly be seen in the Kids Club page.|
+#### Button Testing
 
-#### Existing Members
+| Description | expected results | Did it result correctly? |
+|---|---|---|
+|Hovering over buttons.| The button changes colour to detect the mouse hovering over it.| Yes |
+|Selecting buttons.| The button changes colour to detect the mouse hovering over it.| Yes |
+|Sound once game difficulty is selected.| The button triggers the gamestart-sound.mp3.| Yes |
+|Selected game questions displayed.| Each game difficulty button leads to a seperate string of questions.| Yes |
+|Answer Selection.| Correct and incorrect options are highlighted in different colours before then displaying the next button.| Yes |
+|Next button function.| The next button leads to a randomly shuffled question within the same question string.| Yes |
+|Results page button.| The button leads to the results page with the amount of correct answers and a customized feedback message.| Yes |
+|Restart quiz.| The restart button leads to the home page with the instructions and game difficulties.| Yes |
+|Star Wars logo.|  The logo leads to the home page with the instructions and game difficulties| Yes |
 
-| Goal | How is this achieved? |
-|---|---|
-|I want to find a reliable booking system to provide me with accurate information in regards to table availability, especially in the case of coaching sessions.| Available times can be found within the Bookings page.|
-|I want to be updated on upcoming events and/or offers.| This is one of our future implementations we hope to address soon.|
+#### Browser Testing
 
-### Full Testing
-
-Full Testing was performed on each of the following features:
-
-- Sizing was verified through Google DevTools to check all screen sizes.
-- Navbar's logo and links direct to the appropriate destination.  Navbar correctly indicates current page on all screen sizes.
-- Footer links all direct to correct websites, hover effect functions with larger screens.
-- Forms' functions were tested and all passed:
-  - Required input fields do not allow user to submit without providing the required information.
-  - Submit button takes user to a page that confirms information given.
-  - Cancel button resets the form and deletes all information given.
-- Video displays adequately on all screen sizes, and is not set to autoplay.
-- Map is responsive and allows user to interact without any issues.
+| Description | expected results | Did it result correctly? |
+|---|---|---|
+|Testing the page's functionality on different Browsers.| The page works with no errors at all on different browsers.| Yes- tested on Google Chrome and Microsoft Edge. |
+|Testing the page's functionality regariding different sizing.| The page returns no errors upon adjusting screen sizes.| Yes- screen was re-adjusted on Google DevTools to verify all sizes. |
 
 ## Solved Bugs
 

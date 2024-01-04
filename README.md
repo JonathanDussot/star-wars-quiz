@@ -186,9 +186,7 @@ In order to ensure that this website is as accessible friendly as possible, the 
 - Ensuring there is a sufficient colour contrast throughout the site.
 - I used Lighthouse and wAVE to ensure good measures were taken for accessibility.
 - instructions guide the user through the game's dynamics.
-
-WAVE displays an error within the footer stating there is a low contrast and that both text color and background color are white.  However, the text color is clearly visible in contrast to the background image which is evidently a very dark colour.
-
+  
 ## Technologies Used
 
 ### Languages Used
@@ -260,6 +258,8 @@ click [here](TESTING.md) to see the all the details in regard to the testing don
 - The information I got for my questions mostly came from [buzzfeed](https://www.buzzfeed.com/laurafrustaci/star-wars-trivia)
 
 - Some concepts and parts of code were taken from a [tutorial by 'Web Dev Simplified'](https://www.youtube.com/watch?v=riDzcEQbX6k) as detailed in my [script.js](script.js).
+
+- [Stackoverflow](https://stackoverflow.com/questions/9419263/how-to-play-audio) and their ideas of how to implement audios.
 
 ### Media
 
