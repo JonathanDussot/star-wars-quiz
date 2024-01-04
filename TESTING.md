@@ -42,15 +42,19 @@ I used JSHint to validate the JavaScript code from my page. Results can be seen 
 
 ## Wave
 
-I used WAVE to verify the performance of the site. All tests passed on all pages with exception of error I addressed in accessibility section.
+I used WAVE to verify the performance of the site. All tests passed on the page with the exception mentioned in the accessibility section.
 
-![screenshot of performance on WAVE](documentation/wave-performance-screenshot.png)
+![screenshot of performance on WAVE](documentation/sw-wave-screenshot.png)
 
 ## Lighthouse
 
-I used lighthouse in Google DevTools to verify the site passed all tests. Other pages had similar results.
+I used lighthouse in Google DevTools to verify the site passed all tests.These are the results on a Desktop:
 
-![screenshot of performance on Lighthouse](documentation/lighthouse-performance-screenshot.png)
+![screenshot of performance on Lighthouse for desktop](documentation/sw-lighthouse-1.png)(documentation/sw-lighthouse-2.png)
+
+And these are the results on a mobile screen:
+
+![screenshot of performance on Lighthouse for mobile](documentation/sw-lighthouse-mobile-1.png)(documentation/sw-lighthouse-mobile-2.png)
 
 ## Manual Testing
 
