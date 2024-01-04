@@ -4,13 +4,12 @@ let medium = document.getElementById('medium-game');
 let hard = document.getElementById('hard-game');
 let instructions = document.getElementById('instructions');
 let gameContainerElement = document.getElementById('game-container');
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex;
 let questionElement = document.getElementById('question');
 let answerBtnAreaElement = document.getElementById('answer-btn-area');
 let nextButton = document.getElementById('next-btn');
 let resultsButton = document.getElementById('results-btn');
 let resultsBox = document.getElementById('results');
-let totalQuestions = 10;
 /*Game-type event listeners to determine which code and questions to use.*/
 
 easy.addEventListener('click', () => runGame(easyQuestions, displayEasyQuestion));
@@ -52,7 +51,7 @@ function displayHardQuestion() {
     showQuestion(shuffledQuestions[currentQuestionIndex], 'hard');
 }
 
-function showQuestion(question, difficulty) {
+function showQuestion(question) {
     const currentQuestionNumber = document.getElementById('current-question');
     currentQuestionNumber.innerText = currentQuestionIndex + 1;
 
@@ -112,13 +111,9 @@ function selectAnswer(e) {
 
     if (correctOption) {
         selectedButton.style.backgroundColor = "#0c0c";
-        secetedButton.onclick = function () {
-            correctSound();
-        }
         increaseScore();
     } else {
         selectedButton.style.backgroundColor = "#c00c";
-        /*selectedButton.addEventListener('click', playIncorrectSound);*/
         selectedButton.style.color = "#fff";
         increaseIncorrect();
     }
@@ -129,18 +124,6 @@ function selectAnswer(e) {
         resultsButton.classList.remove('hide');
     }
 }
-
-/**function playCorrectSound() {
-    
-    let correctSound = document.getElementById('correct-sound');
-    correctSound.play();
-    console.log('well is it working?')
-}
-
-function playIncorrectSound() {
-    let incorrectSound = document.getElementById('incorrect-sound');
-    incorrectSound.play();
-}*/
 
 /*Functions to increase scores, taken from Love Maths Walkthrough*/
 function increaseScore() {
@@ -153,16 +136,19 @@ function increaseIncorrect() {
     document.getElementById("incorrect").innerText = ++oldScore;
 }
 
-function playCorrectSound() {
-    let correctSound = document.getElementById('correct-sound');
-    correctSound.play();
-}
-
 function gamestartSound() {
     let gamestart = document.getElementById('gamestart-sound');
     gamestart.volume = 0.2;
     gamestart.play();
 }
+
+function playSound() {
+    var audio = new Audio('../../sounds/correct-sound.mp3');
+    audio.addEventListener('click', function () {
+        audio.play();
+    });
+}
+
 
 /*function for 'next button' */
 nextButton.addEventListener('click',() => {

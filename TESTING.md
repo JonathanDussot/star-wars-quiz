@@ -22,6 +22,7 @@ You can visit the website [here](https://jonathandussot.github.io/star-wars-quiz
       - [Button Testing](#button-testing)
       - [Browser Testing](#browser-testing)
   - [Solved Bugs](#solved-bugs)
+  - [Unfixed Bugs](#unfixed-bugs)
 
 ## W3C Validator
 
@@ -89,10 +90,10 @@ And these are the results on a mobile screen:
 
 #### Browser Testing
 
-| Items being tested | expected results | Did it result correctly? |
-|---|---|---|
-|Testing the page's functionality on different Browsers.| The page works with no errors at all on different browsers.| Yes- tested on Google Chrome and Microsoft Edge. |
-|Testing the page's functionality regariding different sizing.| The page returns no errors upon adjusting screen sizes.| Yes- screen was re-adjusted on Google DevTools to verify all sizes. |
+| Items being tested | Actions taken to test | Expected result | Outcome |
+|---|---|---|---|
+|Browsers| Opened the page on Microsoft Edge and Google Chrome | The page works with no errors at all on different browsers.| :white_check_mark: |
+|Page's sizing.| Re-adjusted screen on Google DevTools to verify all sizes, as well as devices. |The page returns no errors upon adjusting screen sizes or checking on different devices.| :white_check_mark: |
 
 ## Solved Bugs
 
@@ -102,3 +103,7 @@ And these are the results on a mobile screen:
 
 - I also had a problem with displaying final result innerHTML code, because my finalResult var was declared inside the 'if' conditions,
 so I couldn't access it. The solution was to declare the finalResult outside the 'if' blocks so they update.
+
+## Unfixed Bugs
+
+- None that I'm aware of.

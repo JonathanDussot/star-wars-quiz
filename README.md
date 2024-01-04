@@ -17,6 +17,7 @@ You can visit the website [here](https://jonathandussot.github.io/star-wars-quiz
 You can visit the GitHub Repository [here](https://github.com/JonathanDussot/star-wars-quiz)
 
 ## CONTENTS
+
 - [Star Wars Quiz](#star-wars-quiz)
   - [Project Overview](#project-overview)
     - [Live Website](#live-website)
@@ -158,14 +159,12 @@ The page is responsive and contains:
 ![screenshot of results page](documentation/sw-results-page.png)
 
 - Sound Effects
-  - sdsdsdsdsdsds
+  - The gamestart sound effect is activated upon selecting any of the game-type difficulties. This helps give the user a sense of immersion into the game.
 
 - Question counter
-  - sdsdsdsdsdsds
+  - A section with the number of the current question the user is on and the total number of questions in the quiz so that the user is completely aware of where they are within the quiz.
 
-
-
-
+![screenshot of Question counter](documentation/sw-counter-img.png)
 
 ### Future Implementations
 
