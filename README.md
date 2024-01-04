@@ -148,12 +148,12 @@ In order to ensure that this website is as accessible friendly as possible, the 
 
 - Using semantic HTML elements.
 - Providing descriptive alt attributes for all images for users with visual impairments.
-- Providing information for screen readers for various features on the page including forms, navbar, footer among others.
+- Providing information for screen readers for some features on the page.
 - Ensuring there is a sufficient colour contrast throughout the site.
-- Ensuring menu is accessible for screen readers by marking the current page as current.
-- Designing forms taking accessibility into account, with appropriate labelling where needed.
+- I used Lighthouse and wAVE to ensure good measures were taken for accessibility.
+- instructions guide the user through the game's dynamics.
 
-WAVE displays an error within the navbar stating there is no aria-label.  However, I did give it an aria-label, and have not addressed the issue since it is the collapsible nav given in the walkthrough.
+WAVE displays an error within the footer stating there is a low contrast and that both text color and background color are white.  However, the text color is clearly visible in contrast to the background image which is evidently a very dark colour.
 
 ## Technologies Used
 
@@ -171,21 +171,19 @@ The languages used for the website include HTML, CSS and JavaScript.
 
 [Codeanywhere](https://app.codeanywhere.com/) IDE I used for this project.
 
-[Font Awesome](fontawesome.com) for the icons used on the site.
-
 [Google Fonts](https://fonts.google.com/) to import fonts used on the site.
 
 Google Dev tools - to test and fix issues detected.
 
+[freepik](www.freepik.com) to download and use my background-url image.
+
 [Am I Responsive?](https://ui.dev/amiresponsive) to show site on all different screen sizes.
 
-[Pexels](https://www.pexels.com/) to use free images for site.
+[Colormind.io](http://colormind.io/)  to generate color palette used.
 
-[Adobe color](https://color.adobe.com/create/color-wheel) to check contrast between of colours used.
+[Balsamiq](https://balsamiq.com/) to create wireframes.
 
-[Colormind.io](http://colormind.io/) to generate color palette used.
-
-[Balsamiq](https://balsamiq.com/) - to create wireframes.
+[Lucidchart](https://www.lucidchart.com/pages/) to create intelligent diagramming chart.
 
 ## Deployment And Local Development
 
@@ -223,40 +221,33 @@ click [here](TESTING.md) to see the all the details in regard to the testing don
 
 ## Credits
 
-### Code Used
-
-When creating the form, I used this code from [tutorialspoint](https://www.tutorialspoint.com/How-to-use-time-input-type-in-HTML) so I could specify the hours I wanted within the input field indicating 'Time' in both bookings page and kids club page.
-
-`<datalist id="avail">
-                                <option value="09:00"></option>`
-
 ### Content
 
-Most of the points from the About Us & Reasons section within the home page were summarised from the information given on [bestsnookercue website](bestsnookercue.com)
+- The information I got for my questions mostly came from [buzzfeed](https://www.buzzfeed.com/laurafrustaci/star-wars-trivia)
 
 ### Media
 
-- The [blue-ball.jpg](assets/images/blue-ball.jpg), [green-ball.jpg](assets/images/green-ball.jpg) and [red-ball.jpg](assets/images/red-ball.jpg) were all taken from the links to the [mcbillard.de](https://mcbillard.de/) website below respectively.  They were used to accompany my About Us & Reasons section to give a little colour and maintain the theme throughout the home page.
+- The [3d-space-image.jpg](assets/images/3d-space-image.jpg), was taken from [freepik.com](www.freepik.com) from an author named [@kjpargeter](https://www.freepik.com/author/kjpargeter) to give that outerspace, sci-fi feeling theme to my quiz.
 
-[blue-ball.jpg from mcbillard.de](https://mcbillard.de/product_info.php/language/en/info/p1447_Billiard-Ball-Aramith-1GTournament-Champion-blue-snooker)
+[3d-space-image.jpg from freepik](https://www.freepik.com/free-photo/3d-hyperspace-background-with-warp-tunnel-effect_8879794.htm#query=star%20wars&position=0&from_view=search&track=ais&uuid=2743de4c-8bee-445b-a1a5-01771d3ccbf6)
 
-[green-ball.jpg from mcbillard.de](https://mcbillard.de/product_info.php/language/en/info/p1412_Billiard-Ball-Aramith-1GTournament-Champion-green-snooker)
+- The [star-wars-logo.jpg](assets/images/star-wars-logo.jpg) was taken from the [infonegociosmiami](https://infonegocios.miami/) website, which gave me the perfect looking logo for the quiz offering a great colour contrast due to its font-colour and width of the lettering.
 
-[red-ball.jpg from mcbillard.de](https://mcbillard.de/product_info.php/language/en/info/p1451_Billiard-Ball-Aramith-1GTournament-Champion-red-snooker)
+[star-wars-logo.jpg from infonegociosmiami](https://infonegocios.miami/impact-mkt/conocida-en-todas-las-estrellas-explorando-el-legado-del-logo-de-star-wars-una-odisea-de-diseno-y-marca-parte-i)
 
-- The [kid-snooker.jpg](assets/images/kid-snooker.jpg) was taken from the website below and helped set a sense of a professional yet friendly environment for our underage audience.
+- The [yoda.png](assets/images/yoda.png), [darth-maul-img.png](assets/images/darth-maul-img.png), [darth-sidious-img.png](assets/images/darth-sidious-img.png) and [darth-vader-img.png](assets/images/darth-vader-img.png) were all transparent png images used within my game to give it a nostalgic and dynamic feeling to all users going through the experience provided by the quiz.
 
-[kid-snooker.jpg from wpbsa.com](https://wpbsa.com/participation/junior-snooker/)
+[yoda.png](https://pngimg.com/image/109430)
 
-- The [snooker-cue-and-balls.jpg](assets/images/snooker-cue-and-balls.jpg) was taken from Pexels to set the tone for the site`s home page in the header with a sophisticated and classy look.  This photo was taken by [Qamar Rehman](https://www.pexels.com/@qamar-rehman-94539242/)
+[darth-maul-img.png](https://www.iconarchive.com/show/star-wars-characters-icons-by-jonathan-rey/Darth-Maul-02-icon.html) created by Jonathan Rey.
 
-[snooker-cue-and-balls.jpg from pexels.com](https://www.pexels.com/photo/close-up-photo-of-snooker-game-11354500/)
+[darth-sidious-img.png](https://www.pngkey.com/maxpic/u2e6w7i1a9a9a9a9/) created by The HD Colin Powell Anthrax.
 
-- The [white-and-reds-big.jpg](assets/images/white-and-reds-big.jpg) was taken from Pexels. This was used within the kids club page's header.  This photo was taken by [Fritz Jaspers](https://www.pexels.com/@fritz-jaspers-746891536/)
+[darth-vader-img.png](https://pngimg.com/image/28358)
 
-[white-and-reds-big.jpg from pexels.com](https://www.pexels.com/photo/billiard-balls-on-a-snooker-table-18828557/)
+- The sound media files [gamestart-sound.mp3](sounds/gamestart-sound.mp3), [correct-sound.mp3](sounds/correct-sound.mp3) and [incorrect-sound.mp3](sounds/incorrect-sound.mp3) were all taken from [soundfxcenter](https://soundfxcenter.com/).
 
-The video media file within the kids club page was taken from the [Stephen Hendry's Cue Tips](https://www.youtube.com/watch?v=7wDxyiWBYGM) YouTube channel.
+[All sound files](https://soundfxcenter.com/sound-effects/star-wars/210)
 
 ## Acknowledgements
 
