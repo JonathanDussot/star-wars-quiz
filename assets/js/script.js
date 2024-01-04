@@ -1,30 +1,30 @@
 /*Declaration of various variables*/
-let easy = document.getElementById('easy-game')
-let medium = document.getElementById('medium-game')
-let hard = document.getElementById('hard-game')
-let instructions = document.getElementById('instructions')
-let gameContainerElement = document.getElementById('game-container')
+let easy = document.getElementById('easy-game');
+let medium = document.getElementById('medium-game');
+let hard = document.getElementById('hard-game');
+let instructions = document.getElementById('instructions');
+let gameContainerElement = document.getElementById('game-container');
 let shuffledQuestions, currentQuestionIndex
-let questionElement = document.getElementById('question')
-let answerBtnAreaElement = document.getElementById('answer-btn-area')
-let nextButton = document.getElementById('next-btn')
-let resultsButton = document.getElementById('results-btn')
-let resultsBox = document.getElementById('results')
+let questionElement = document.getElementById('question');
+let answerBtnAreaElement = document.getElementById('answer-btn-area');
+let nextButton = document.getElementById('next-btn');
+let resultsButton = document.getElementById('results-btn');
+let resultsBox = document.getElementById('results');
 /*Game-type event listeners to determine which code and questions to use.*/
-easy.addEventListener('click', runGameEasy)
-medium.addEventListener('click', runGameMedium)
-hard.addEventListener('click', runGameHard)
+easy.addEventListener('click', runGameEasy);
+medium.addEventListener('click', runGameMedium);
+hard.addEventListener('click', runGameHard);
 /**
  * Starts easy game, provides questions in a random order.
  * Majority of code used from YouTube tutorial from Web Dev Simplified
  * provided in the credits section of README.md
  */
 function runGameEasy() {
-    instructions.classList.add('hide')
-    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    gameContainerElement.classList.remove('hide')
-    displayEasyQuestion()
+    instructions.classList.add('hide');
+    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    gameContainerElement.classList.remove('hide');
+    displayEasyQuestion();
 }
 /**
  * Starts medium game, provides questions in a random order.
@@ -32,11 +32,11 @@ function runGameEasy() {
  * provided in the credits section of README.md
  */
 function runGameMedium() {
-    instructions.classList.add('hide')
-    shuffledQuestions = mediumQuestions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    gameContainerElement.classList.remove('hide')
-    displayMediumQuestion()
+    instructions.classList.add('hide');
+    shuffledQuestions = mediumQuestions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    gameContainerElement.classList.remove('hide');
+    displayMediumQuestion();
 }
 /**
  * Starts hard game, provides questions in a random order.
@@ -44,69 +44,69 @@ function runGameMedium() {
  * provided in the credits section of README.md
  */
 function runGameHard() {
-    instructions.classList.add('hide')
-    shuffledQuestions = hardQuestions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    gameContainerElement.classList.remove('hide')
-    displayHardQuestion()
+    instructions.classList.add('hide');
+    shuffledQuestions = hardQuestions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    gameContainerElement.classList.remove('hide');
+    displayHardQuestion();
 }
 /**
- * Starts to display easyQuestions
+ * Starts to display easyQuestions in a shuffled order.
  * some code used from YouTube tutorial from Web Dev Simplified
  * provided in the credits section of README.md
  */
 function displayEasyQuestion() {
-    resetState()
-    showEasyQuestion(shuffledQuestions[currentQuestionIndex])
+    resetState();
+    showEasyQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 function showEasyQuestion(question) {
-    questionElement.innerText = question.question
+    questionElement.innerText = question.question;
     question.answers.forEach(answer => {
-        let button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('answer-btn')
+        let button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('answer-btn');
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer)
+        button.addEventListener('click', selectAnswer);
         answerBtnAreaElement.appendChild(button);
-    }) 
+    });
 }
 /**hides next button again and returns answer boxes to original state before and replacing 
  * original buttons from HTML
  */
 function resetState() {
-    nextButton.classList.add('hide')
+    nextButton.classList.add('hide');
     while (answerBtnAreaElement.firstChild) {
-        answerBtnAreaElement.removeChild(answerBtnAreaElement.firstChild)
+        answerBtnAreaElement.removeChild(answerBtnAreaElement.firstChild);
     }
 }
 /**
- * Starts to display mediumQuestions
+ * Starts to display mediumQuestions in a shuffled order.
  * some code used from YouTube tutorial from Web Dev Simplified
  * provided in the credits section of README.md
  */
 function displayMediumQuestion() {
-    resetState()
-    showMediumQuestion(shuffledQuestions[currentQuestionIndex])
+    resetState();
+    showMediumQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 function showMediumQuestion(question) {
-    questionElement.innerText = question.question
+    questionElement.innerText = question.question;
     question.answers.forEach(answer => {
-        let button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('answer-btn')
+        let button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('answer-btn');
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer)
+        button.addEventListener('click', selectAnswer);
         answerBtnAreaElement.appendChild(button);
-    }) 
+    });
 }
 /**
- * Starts to display hardQuestions
+ * Starts to display hardQuestions in a shuffled order.
  * some code used from YouTube tutorial from Web Dev Simplified
  * provided in the credits section of README.md
  */
@@ -160,9 +160,9 @@ function selectAnswer(e) {
     }
 
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
+        nextButton.classList.remove('hide');
     } else {
-        resultsButton.classList.remove('hide')
+        resultsButton.classList.remove('hide');
     }
 }
 
@@ -189,9 +189,9 @@ function increaseIncorrect() {
 }
 /*function for 'next button' */
 nextButton.addEventListener('click',() => {
-    currentQuestionIndex++
-    displayEasyQuestion()
-})
+    currentQuestionIndex++;
+    displayEasyQuestion();
+});
 /**
  * leads to the results section, displaying feedback results and messages
  */
@@ -201,24 +201,24 @@ resultsButton.addEventListener('click',() => {
     restartButton.classList.remove('hide');
     let scoreTotal = document.getElementById('total');
     let finalScoreElement = document.getElementById('score');
-    let finalScore = parseInt(finalScoreElement.innerText)
-    let finalResult
+    let finalScore = parseInt(finalScoreElement.innerText);
+    let finalResult;
 
     if (finalScore <= 3) {
         finalResult = `
-        <p id="results-message">You got ${finalScore}!<br> "Patience you must have, my young Padawan."</p>
+        <p id="results-message">You got ${finalScore} correct!<br> "Patience you must have, my young Padawan."</p>
         `;
     } else if (finalScore >= 4 && finalScore <= 7) {
         finalResult = `
-        <p id="results-message">You got ${finalScore}!<br> "If no mistake have you made, yet losing you are, a different game you should play."</p>
+        <p id="results-message">You got ${finalScore} correct!<br> "If no mistake have you made, yet losing you are, a different game you should play."</p>
         `;
     } else if (finalScore >= 8) {
         finalResult = `
-        <p id="results-message"> You got ${finalScore}!<br> "Pass on what you have learned. Strength, mastery, hmm… but weakness, folly, failure, also. Yes, failure, most of all. The greatest teacher, failure is."</p>
+        <p id="results-message"> You got ${finalScore} correct!<br> "Pass on what you have learned. Strength, mastery, hmm… but weakness, folly, failure, also. Yes, failure, most of all. The greatest teacher, failure is."</p>
         `;
     }
     scoreTotal.innerHTML = finalResult;
-})
+});
 /*Restart button function to take user back to the first page*/
 let homePage = 'index.html';
 let restartButton = document.getElementById('restart-div');
@@ -317,7 +317,7 @@ const easyQuestions = [
             { text: 'Barry Nelson', correct: false }
         ]
     }
-]
+];
 /*Medium set of Questions*/
 const mediumQuestions = [
     {
@@ -410,7 +410,7 @@ const mediumQuestions = [
             { text: 'Approximately 5,002,795,192', correct: false }
         ]
     }
-]
+];
 /*hard set of Questions*/
 const hardQuestions = [
     {
@@ -503,4 +503,4 @@ const hardQuestions = [
             { text: 'Kamino', correct: false }
         ]
     }
-]
+];

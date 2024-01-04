@@ -17,6 +17,40 @@ You can visit the website [here](https://jonathandussot.github.io/star-wars-quiz
 You can visit the GitHub Repository [here](https://github.com/JonathanDussot/star-wars-quiz)
 
 ## CONTENTS
+- [Star Wars Quiz](#star-wars-quiz)
+  - [Project Overview](#project-overview)
+    - [Live Website](#live-website)
+    - [My GitHub Repository](#my-github-repository)
+  - [CONTENTS](#contents)
+  - [User Experience (UX)](#user-experience-ux)
+    - [Common Usage](#common-usage)
+  - [User Stories](#user-stories)
+  - [Design](#design)
+    - [colour scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+    - [Wireframes](#wireframes)
+      - [Home Page](#home-page)
+      - [Quiz Questions](#quiz-questions)
+      - [Results Page](#results-page)
+    - [Intelligent Diagramming chart](#intelligent-diagramming-chart)
+  - [Features](#features)
+    - [General Features on each page](#general-features-on-each-page)
+    - [Future Implementations](#future-implementations)
+    - [Accessibility](#accessibility)
+  - [Technologies Used](#technologies-used)
+    - [Languages Used](#languages-used)
+    - [Libraries and Programs Used](#libraries-and-programs-used)
+  - [Deployment And Local Development](#deployment-and-local-development)
+    - [Deployment to GitHub pages](#deployment-to-github-pages)
+    - [Local Deployment](#local-deployment)
+      - [How to Fork](#how-to-fork)
+      - [How to Clone](#how-to-clone)
+  - [Testing](#testing)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+  - [Acknowledgements](#acknowledgements)
 
 ## User Experience (UX)
 
@@ -225,6 +259,8 @@ click [here](TESTING.md) to see the all the details in regard to the testing don
 
 - The information I got for my questions mostly came from [buzzfeed](https://www.buzzfeed.com/laurafrustaci/star-wars-trivia)
 
+- Some concepts and parts of code were taken from a [tutorial by 'Web Dev Simplified'](https://www.youtube.com/watch?v=riDzcEQbX6k) as detailed in my [script.js](script.js).
+
 ### Media
 
 - The [3d-space-image.jpg](assets/images/3d-space-image.jpg), was taken from [freepik.com](www.freepik.com) from an author named [@kjpargeter](https://www.freepik.com/author/kjpargeter) to give that outerspace, sci-fi feeling theme to my quiz.
@@ -251,10 +287,8 @@ click [here](TESTING.md) to see the all the details in regard to the testing don
 
 ## Acknowledgements
 
-I would like to acknowledge the following people who have been a huge help for my very first milestone project:
+I would like to acknowledge the following people who have been a huge help for this project:
 
-- [Lauren-Nicole](https://github.com/CluelessBiker) - My Code Institute Mentor for her vast amount of knowledge, relaxing demeanour and patience!
+- [Lauren-Nicole](https://github.com/CluelessBiker) - My Code Institute Mentor for her advice and expertise.
 
-- [Kera Cudmore](https://github.com/kera-cudmore) - for her constant support through the slack community and tutorials.
-
-- Arwen Dussot - my newborn daughter for keeping me awake at night and 'on my toes' so to speak.
+- The Slack community of Code Institute for their help and support.
