@@ -10,57 +10,52 @@ let answerBtnAreaElement = document.getElementById('answer-btn-area');
 let nextButton = document.getElementById('next-btn');
 let resultsButton = document.getElementById('results-btn');
 let resultsBox = document.getElementById('results');
+let totalQuestions = 10;
 /*Game-type event listeners to determine which code and questions to use.*/
-easy.addEventListener('click', runGameEasy);
-medium.addEventListener('click', runGameMedium);
-hard.addEventListener('click', runGameHard);
+
+easy.addEventListener('click', () => runGame(easyQuestions, displayEasyQuestion));
+medium.addEventListener('click', () => runGame(mediumQuestions, displayMediumQuestion));
+hard.addEventListener('click', () => runGame(hardQuestions, displayHardQuestion));
+
 /**
- * Starts easy game, provides questions in a random order.
+ * Provides the starting conditions for the game by shuffling the questions and then calling the
+ * specific string of questions selected by the user.
  * Majority of code used from YouTube tutorial from Web Dev Simplified
  * provided in the credits section of README.md
  */
-function runGameEasy() {
+function runGame(questions, displayFunction) {
     instructions.classList.add('hide');
-    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5);
+    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
     gameContainerElement.classList.remove('hide');
-    displayEasyQuestion();
+    displayFunction();
 }
-/**
- * Starts medium game, provides questions in a random order.
- * Majority of code used from YouTube tutorial from Web Dev Simplified
- * provided in the credits section of README.md
- */
-function runGameMedium() {
-    instructions.classList.add('hide');
-    shuffledQuestions = mediumQuestions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
-    gameContainerElement.classList.remove('hide');
-    displayMediumQuestion();
-}
-/**
- * Starts hard game, provides questions in a random order.
- * Majority of code used from YouTube tutorial from Web Dev Simplified
- * provided in the credits section of README.md
- */
-function runGameHard() {
-    instructions.classList.add('hide');
-    shuffledQuestions = hardQuestions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
-    gameContainerElement.classList.remove('hide');
-    displayHardQuestion();
-}
+
 /**
  * Starts to display easyQuestions in a shuffled order.
  * some code used from YouTube tutorial from Web Dev Simplified
  * provided in the credits section of README.md
  */
+
 function displayEasyQuestion() {
     resetState();
-    showEasyQuestion(shuffledQuestions[currentQuestionIndex]);
+    showQuestion(shuffledQuestions[currentQuestionIndex], 'easy');
 }
 
-function showEasyQuestion(question) {
+function displayMediumQuestion() {
+    resetState();
+    showQuestion(shuffledQuestions[currentQuestionIndex], 'medium');
+}
+
+function displayHardQuestion() {
+    resetState();
+    showQuestion(shuffledQuestions[currentQuestionIndex], 'hard');
+}
+
+function showQuestion(question, difficulty) {
+    const currentQuestionNumber = document.getElementById('current-question');
+    currentQuestionNumber.innerText = currentQuestionIndex + 1;
+
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
         let button = document.createElement('button');
@@ -73,6 +68,7 @@ function showEasyQuestion(question) {
         answerBtnAreaElement.appendChild(button);
     });
 }
+
 /**hides next button again and returns answer boxes to original state before and replacing 
  * original buttons from HTML
  */
@@ -87,47 +83,13 @@ function resetState() {
  * some code used from YouTube tutorial from Web Dev Simplified
  * provided in the credits section of README.md
  */
-function displayMediumQuestion() {
-    resetState();
-    showMediumQuestion(shuffledQuestions[currentQuestionIndex]);
-}
 
-function showMediumQuestion(question) {
-    questionElement.innerText = question.question;
-    question.answers.forEach(answer => {
-        let button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('answer-btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerBtnAreaElement.appendChild(button);
-    });
-}
 /**
  * Starts to display hardQuestions in a shuffled order.
  * some code used from YouTube tutorial from Web Dev Simplified
  * provided in the credits section of README.md
  */
-function displayHardQuestion() {
-    resetState();
-    showHardQuestion(shuffledQuestions[currentQuestionIndex]);
-}
 
-function showHardQuestion(question) {
-    questionElement.innerText = question.question;
-    question.answers.forEach(answer => {
-        let button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('answer-btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerBtnAreaElement.appendChild(button);
-    });
-}
 /**
  * Starts to display hardQuestions
  * some code used from YouTube tutorial from Web Dev Simplified

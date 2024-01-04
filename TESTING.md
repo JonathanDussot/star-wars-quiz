@@ -96,6 +96,9 @@ And these are the results on a mobile screen:
 
 ## Solved Bugs
 
-- Media video on kidsclub.html wouldn't let me make it narrower.  Upon inspecting the code using Google DevTools, I discovered it was due to a line on css:269 which had it set to 100%. This was corrected and fixed in order to modify size and change structure for larger screens.
+- I had a problem with showEasyQuestions function, it would not append child and said the function was not valid but when I switched element from ClassName to Id, the bug was fixed.
 
-- The kid-snooker image on kidsclub.html originally wouldn't allow me to increase the width for screens 768px and larger.  I found it was because of a rule in which I had set a max-width of 450px. This was modified and fixed.
+- Another problem I had was with the highlighting of the correct option when an incorrect option was selected. This was corrected by adding an additional isCorrect variable.
+
+- I also had a problem with displaying final result innerHTML code, because my finalResult var was declared inside the 'if' conditions,
+so I couldn't access it. The solution was to declare the finalResult outside the 'if' blocks so they update.

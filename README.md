@@ -121,7 +121,6 @@ I created this Intelligent Diagram using Lucid Chart
 
 ![screenshot of results page on Lucidchart](documentation/diagram-img.png)
 
-
 ## Features
 
 ### General Features on each page
