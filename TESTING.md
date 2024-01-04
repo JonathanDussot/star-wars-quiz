@@ -12,6 +12,7 @@ You can visit the website [here](https://jonathandussot.github.io/star-wars-quiz
   - [Live website](#live-website)
   - [CONTENTS](#contents)
   - [W3C Validator](#w3c-validator)
+  - [JSHint](#jshint)
   - [Wave](#wave)
   - [Lighthouse](#lighthouse)
   - [Manual Testing](#manual-testing)
@@ -24,12 +25,18 @@ You can visit the website [here](https://jonathandussot.github.io/star-wars-quiz
 
 ## W3C Validator
 
-I used the W3C Validator to validate the HTML and CSS code of the following pages below:
+I used the W3C Validator to validate the HTML and CSS code from my page. Results can be seen in the screenshots below:
 
 [index.html](index.html) - returned no errors or warnings
 [screenshot of index.html being validated](documentation/sw-w3c-html.png)
+
 [style.css](assets/css/style.css) - returned no errors or warnings
 [screenshot of style.css being validated](documentation/sw-w3c-css.png)
+
+## JSHint
+
+I used JSHint to validate the JavaScript code from my page. Results can be seen in the screenshots below:
+
 [script.js](assets/js/script.js) - returned 47 warnings as seen in screenshot, no errors found.
 [screenshot of script.js being validated](documentation/sw-js-hint.png)
 
