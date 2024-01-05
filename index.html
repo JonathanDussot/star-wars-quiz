@@ -1,94 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A quiz about Star Wars.">
-    <meta name="keywords"
-        content="Star Wars, The Star Wars Quiz, Quiz.">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A quiz about Star Wars." />
+    <meta name="keywords" content="Star Wars, The Star Wars Quiz, Quiz." />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap"
+      rel="stylesheet"
+    />
     <!-- favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons8-death-star-32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/icons8-death-star-32.png"
+    />
     <title>The Star Wars Quiz</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header section with logo -->
     <header>
-        <h1 class="heading">
-            THE <a href="index.html" aria-label="go to the main page"><img id="heading-logo" src="assets/images/star-wars-logo.jpg" alt="logo"></a>
-            QUIZ
-        </h1>
+      <h1 class="heading">
+        THE
+        <a href="index.html" aria-label="go to the main page"
+          ><img
+            id="heading-logo"
+            src="assets/images/star-wars-logo.jpg"
+            alt="logo"
+        /></a>
+        QUIZ
+      </h1>
     </header>
     <!-- game-area section-->
     <main>
-        <div class="game-area hide" id="game-container">
-            <div id="question-counter">Question <span id="current-question">1</span> of 10</div>
-            <div class="question-area" id="question">Question here!</div>
-            <div id="answer-btn-area">
-                <button class="answer-btn">answer A</button>
-                <button class="answer-btn">answer B</button>
-                <button class="answer-btn">answer C</button>
-                <button class="answer-btn">answer D</button>
-                <audio id="correct-sound" class="hide">
-                    <source src="sounds/correct-sound.mp3" type="audio/mp3">
-                </audio>
-                <audio id="incorrect-sound" class="hide">
-                    <source src="sounds/incorrect-sound.mp3" type="audio/mp3">
-                </audio>
-            </div>
-            <div class="option-btns">
-                <button class="next-question-btn hide" id="next-btn">Next Question</button>
-                <button class="next-question-btn hide" id="results-btn">Check results!</button>
-            </div>
-            <div class="score-area">
-                <p class="scores">Correct Answers: <span id="score">0</span></p>
-                <p class="scores">Incorrect Answers: <span id="incorrect">0</span></p>
-            </div>
+      <div class="game-area hide" id="game-container">
+        <div id="question-counter">
+          Question <span id="current-question">1</span> of 10
         </div>
-        <!-- Instructions-area section -->
-        <div class="instructions-area" id="instructions">
-            <h2>
-                <img id="yoda-img" src="assets/images/yoda.png" alt="A picture of Yoda" aria-label="a picture of Yoda">
-            "The instructions you have here, Padawan. Do or do not. There is no try"
-            </h2>
-            <p class="instruction">Select the sith lord you wish to face (difficulty)</p>
-            <p class="instruction">You will receive 10 questions with 4 answers each. You must choose ONE</p>
-            <p class="instruction">You cannot change your answer after clicking</p>
-            <p class="instruction">If you wish to restart the quiz, click on the Star Wars logo</p>
-            <p class="instruction">Feel the force before starting, you must!</p>
-            <div class="game-type">
-                <button class="game-type-btn" id="easy-game" onclick="gamestartSound()"><img src="assets/images/darth-maul-img.png" class="btn-img" 
-                    alt="A picture of Darth Maul for easy difficulty" 
-                    aria-label="a picture of darth maul for easy difficulty">Darth Maul (Easy)</button>
-
-                <button class="game-type-btn" id="medium-game" onclick="gamestartSound()"><img src="assets/images/darth-vader-img.png" class="btn-img" 
-                    alt="A picture of Darth Vader for medium difficulty"
-                    aria-label="a picture of darth vader for medium difficulty">Darth Vader (Medium)</button>
-
-                <button class="game-type-btn" id="hard-game" onclick="gamestartSound()"><img src="assets/images/darth-sidious-img.png" class="btn-img" 
-                    alt="A picture of Darth Sidious for hard difficulty"
-                    aria-label="a picture of darth sidious for hard difficulty">Darth Sidious (Hard)</button>
-                <audio id="gamestart-sound">
-                    <source src="sounds/gamestart-sound.mp3" type="audio/mp3">
-                </audio>
-            </div>
+        <div class="question-area" id="question">Question here!</div>
+        <div id="answer-btn-area">
+          <button class="answer-btn">answer A</button>
+          <button class="answer-btn">answer B</button>
+          <button class="answer-btn">answer C</button>
+          <button class="answer-btn">answer D</button>
+          <audio id="correct-sound" class="hide">
+            <source src="sounds/correct-sound.mp3" type="audio/mp3" />
+          </audio>
+          <audio id="incorrect-sound" class="hide">
+            <source src="sounds/incorrect-sound.mp3" type="audio/mp3" />
+          </audio>
         </div>
-        <!--Results area-->
-        <div class="results-area hide" id="results">
-            <img id="yoda-res-img" src="assets/images/yoda.png" alt="A picture of Yoda" aria-label="a picture of Yoda">
-            <div id="total"></div>
-        </dv>-
-        <div class="restart-btn hide" id="restart-div"><button id="restart-button" aria-label="go to the main page">Play Again</button></div>
-        <script src="assets/js/script.js"></script>
+        <div class="option-btns">
+          <button class="next-question-btn hide" id="next-btn">
+            Next Question
+          </button>
+          <button class="next-question-btn hide" id="results-btn">
+            Check results!
+          </button>
+        </div>
+        <div class="score-area">
+          <p class="scores">Correct Answers: <span id="score">0</span></p>
+          <p class="scores">Incorrect Answers: <span id="incorrect">0</span></p>
+        </div>
+      </div>
+      <!-- Instructions-area section -->
+      <div class="instructions-area" id="instructions">
+        <h2>
+          <img
+            id="yoda-img"
+            src="assets/images/yoda.png"
+            alt="A picture of Yoda"
+            aria-label="a picture of Yoda"
+          />
+          "The instructions you have here, Padawan. Do or do not. There is no
+          try"
+        </h2>
+        <p class="instruction">
+          Select the sith lord you wish to face (difficulty)
+        </p>
+        <p class="instruction">
+          You will receive 10 questions with 4 answers each. You must choose ONE
+        </p>
+        <p class="instruction">You cannot change your answer after clicking</p>
+        <p class="instruction">
+          If you wish to restart the quiz, click on the Star Wars logo
+        </p>
+        <p class="instruction">Feel the force before starting, you must!</p>
+        <div class="game-type">
+          <button
+            class="game-type-btn"
+            id="easy-game"
+            onclick="gamestartSound()"
+          >
+            <img
+              src="assets/images/darth-maul-img.png"
+              class="btn-img"
+              alt="A picture of Darth Maul for easy difficulty"
+              aria-label="a picture of darth maul for easy difficulty"
+            />Darth Maul (Easy)
+          </button>
+
+          <button
+            class="game-type-btn"
+            id="medium-game"
+            onclick="gamestartSound()"
+          >
+            <img
+              src="assets/images/darth-vader-img.png"
+              class="btn-img"
+              alt="A picture of Darth Vader for medium difficulty"
+              aria-label="a picture of darth vader for medium difficulty"
+            />Darth Vader (Medium)
+          </button>
+
+          <button
+            class="game-type-btn"
+            id="hard-game"
+            onclick="gamestartSound()"
+          >
+            <img
+              src="assets/images/darth-sidious-img.png"
+              class="btn-img"
+              alt="A picture of Darth Sidious for hard difficulty"
+              aria-label="a picture of darth sidious for hard difficulty"
+            />Darth Sidious (Hard)
+          </button>
+          <audio id="gamestart-sound">
+            <source src="sounds/gamestart-sound.mp3" type="audio/mp3" />
+          </audio>
+        </div>
+      </div>
+      <!--Results area-->
+      <div class="results-area hide" id="results">
+        <img
+          id="yoda-res-img"
+          src="assets/images/yoda.png"
+          alt="A picture of Yoda"
+          aria-label="a picture of Yoda"
+        />
+        <div id="total"></div>
+      </div>
+      <div class="restart-btn hide" id="restart-div">
+        <button id="restart-button" aria-label="go to the main page">
+          Play Again
+        </button>
+      </div>
+      <script src="assets/js/script.js"></script>
     </main>
     <footer>
-        <p id="footer-text">For educational purposes only</p>
+      <p id="footer-text">For educational purposes only</p>
     </footer>
-</body>
+  </body>
 </html>
