@@ -10,8 +10,8 @@ let answerBtnAreaElement = document.getElementById('answer-btn-area');
 let nextButton = document.getElementById('next-btn');
 let resultsButton = document.getElementById('results-btn');
 let resultsBox = document.getElementById('results');
-/*Game-type event listeners to determine which code and questions to use.*/
 
+/*Game-type event listeners to determine which code and questions to use.*/
 easy.addEventListener('click', () => runGame(easyQuestions, displayEasyQuestion));
 medium.addEventListener('click', () => runGame(mediumQuestions, displayMediumQuestion));
 hard.addEventListener('click', () => runGame(hardQuestions, displayHardQuestion));
@@ -31,9 +31,8 @@ function runGame(questions, displayFunction) {
 }
 
 /**
- * Starts to display easyQuestions in a shuffled order.
- * some code used from YouTube tutorial from Web Dev Simplified
- * provided in the credits section of README.md
+ * Take user to easyQuestions, mediumQuestions, hardQuestions, all
+ * organized in a shuffled manner.
  */
 
 function displayEasyQuestion() {
@@ -50,7 +49,13 @@ function displayHardQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex], 'hard');
 }
-
+/**
+ * Displays questions from each string.  currentQuestion adds onto the question counter.
+ * Fills assigned spaces with questions and answers from the string and tells the 
+ * page which is the correct option.
+ * Some code used from YouTube tutorial from Web Dev Simplified
+ * provided in the credits section of README.md 
+ */
 function showQuestion(question) {
     const currentQuestionNumber = document.getElementById('current-question');
     currentQuestionNumber.innerText = currentQuestionIndex + 1;
@@ -67,8 +72,8 @@ function showQuestion(question) {
         answerBtnAreaElement.appendChild(button);
     });
 }
-
-/**hides next button again and returns answer boxes to original state before and replacing 
+/**
+ * hides next button again and returns answer boxes to original state before and replacing 
  * original buttons from HTML
  */
 function resetState() {
@@ -78,21 +83,10 @@ function resetState() {
     }
 }
 /**
- * Starts to display mediumQuestions in a shuffled order.
- * some code used from YouTube tutorial from Web Dev Simplified
- * provided in the credits section of README.md
- */
-
-/**
- * Starts to display hardQuestions in a shuffled order.
- * some code used from YouTube tutorial from Web Dev Simplified
- * provided in the credits section of README.md
- */
-
-/**
- * Starts to display hardQuestions
- * some code used from YouTube tutorial from Web Dev Simplified
- * provided in the credits section of README.md
+ * Detects if selected answer is the correct option.  Disables all answers once
+ * an option is selected. plays a sound depending on answer chosen, add to correct/
+ * incorrect scores, and adds a next question if page detects there is yet another 
+ * question left in the string.  If not, 'results page' button is displayed instead.
  */
 function selectAnswer(e) {
     let selectedButton = e.target;
@@ -111,10 +105,12 @@ function selectAnswer(e) {
 
     if (correctOption) {
         selectedButton.style.backgroundColor = "#0c0c";
+        playSound('correct-sound');
         increaseScore();
     } else {
         selectedButton.style.backgroundColor = "#c00c";
         selectedButton.style.color = "#fff";
+        playSound('incorrect-sound');
         increaseIncorrect();
     }
 
@@ -136,27 +132,27 @@ function increaseIncorrect() {
     document.getElementById("incorrect").innerText = ++oldScore;
 }
 
+/*Functions to play sounds when they are called on*/
 function gamestartSound() {
     let gamestart = document.getElementById('gamestart-sound');
     gamestart.volume = 0.2;
     gamestart.play();
 }
 
-function playSound() {
-    var audio = new Audio('../../sounds/correct-sound.mp3');
-    audio.addEventListener('click', function () {
-        audio.play();
-    });
+function playSound(SoundFileName) {
+    var audio = new Audio(`../../sounds/${SoundFileName}.mp3`);
+    audio.volume = 0.4;
+    audio.play();
 }
 
-
-/*function for 'next button' */
+/*function for next button*/
 nextButton.addEventListener('click',() => {
     currentQuestionIndex++;
     displayEasyQuestion();
 });
 /**
- * leads to the results section, displaying feedback results and messages
+ * leads to the results section, displaying feedback results and customized messages 
+ * depending on how many correct answers the user had.
  */
 resultsButton.addEventListener('click',() => {
     gameContainerElement.classList.add('hide');
