@@ -10,6 +10,9 @@ let answerBtnAreaElement = document.getElementById('answer-btn-area');
 let nextButton = document.getElementById('next-btn');
 let resultsButton = document.getElementById('results-btn');
 let resultsBox = document.getElementById('results');
+let correctSound = document.getElementById('correct-sound');
+let incorrectSound = document.getElementById('incorrect-sound');
+let gamestart = document.getElementById('gamestart-sound');
 
 /*Game-type event listeners to determine which code and questions to use.*/
 easy.addEventListener('click', () => runGame(easyQuestions, displayEasyQuestion));
@@ -92,7 +95,7 @@ function selectAnswer(e) {
     let selectedButton = e.target;
     let correctOption = selectedButton.dataset.correct === 'true';
     let allOptions = answerBtnAreaElement.children.length;
-    
+
     for (let i = 0; i < allOptions; i++) {
         let currentButton = answerBtnAreaElement.children[i];
         let isCorrect = currentButton.dataset.correct === 'true';
@@ -105,12 +108,12 @@ function selectAnswer(e) {
 
     if (correctOption) {
         selectedButton.style.backgroundColor = "#0c0c";
-        playSound('correct-sound');
+        correctSound.play();
         increaseScore();
     } else {
         selectedButton.style.backgroundColor = "#c00c";
         selectedButton.style.color = "#fff";
-        playSound('incorrect-sound');
+        incorrectSound.play();
         increaseIncorrect();
     }
 
@@ -134,19 +137,12 @@ function increaseIncorrect() {
 
 /*Functions to play sounds when they are called on*/
 function gamestartSound() {
-    let gamestart = document.getElementById('gamestart-sound');
     gamestart.volume = 0.2;
     gamestart.play();
 }
 
-function playSound(SoundFileName) {
-    var audio = new Audio(`../../sounds/${SoundFileName}.mp3`);
-    audio.volume = 0.4;
-    audio.play();
-}
-
 /*function for next button*/
-nextButton.addEventListener('click',() => {
+nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
     displayEasyQuestion();
 });
@@ -154,7 +150,7 @@ nextButton.addEventListener('click',() => {
  * leads to the results section, displaying feedback results and customized messages 
  * depending on how many correct answers the user had.
  */
-resultsButton.addEventListener('click',() => {
+resultsButton.addEventListener('click', () => {
     gameContainerElement.classList.add('hide');
     resultsBox.classList.remove('hide');
     restartButton.classList.remove('hide');
@@ -184,7 +180,7 @@ let restartButton = document.getElementById('restart-div');
 restartButton.addEventListener('click', () => {
     window.location.href = homePage;
 });
- /*Easy set of Questions*/
+/*Easy set of Questions*/
 const easyQuestions = [
     {
         question: 'What actress played Princess Leia in \'Star Wars: Return of the Jedi\'?',
