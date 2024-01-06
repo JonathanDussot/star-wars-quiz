@@ -104,6 +104,8 @@ And these are the results on a mobile screen:
 - I also had a problem with displaying final result innerHTML code, because my finalResult var was declared inside the 'if' conditions,
 so I couldn't access it. The solution was to declare the finalResult outside the 'if' blocks so they update.
 
+- Initially, the correctSound and incorrectSound files were linked to my script.js via a relative path within literals, which was ok with my IDE's local python server, but not with Github page as it gave me a 404 error message indicating it could be found.  This message was displayed through Google DevTools' Console and Network tabs. To troubleshoot, I tried changing it to an absolute path instead, but to no avail.  Eventually, I solved this bug by linking the mp3 file to the html and used a .play() instead.
+
 ## Unfixed Bugs
 
 - None that I'm aware of.

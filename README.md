@@ -160,6 +160,7 @@ The page is responsive and contains:
 
 - Sound Effects
   - The gamestart sound effect is activated upon selecting any of the game-type difficulties. This helps give the user a sense of immersion into the game.
+  - The correct & incorrect sound effects are activated upon selecting an answer to add to the user's excitement while going through the quiz's questions, helping to add excitement to the user's experience.
 
 - Question counter
   - A section with the number of the current question the user is on and the total number of questions in the quiz so that the user is completely aware of where they are within the quiz.
@@ -269,7 +270,7 @@ click [here](TESTING.md) to see the all the details in regard to the testing don
 
 [star-wars-logo.jpg from infonegociosmiami](https://infonegocios.miami/impact-mkt/conocida-en-todas-las-estrellas-explorando-el-legado-del-logo-de-star-wars-una-odisea-de-diseno-y-marca-parte-i)
 
-- The [yoda.png](assets/images/yoda.png), [darth-maul-img.png](assets/images/darth-maul-img.png), [darth-sidious-img.png](assets/images/darth-sidious-img.png) and [darth-vader-img.png](assets/images/darth-vader-img.png) were all transparent png images used within my game to give it a nostalgic and dynamic feeling to all users going through the experience provided by the quiz.
+- The [yoda.png](assets/images/yoda.png), [darth-maul-img.png](assets/images/darth-maul-img.png), [darth-sidious-img.png](assets/images/darth-sidious-img.png) and [darth-vader-img.png](assets/images/darth-vader-img.png) were all transparent png images used within my game to give it a nostalgic and dynamic feeling to all users going through the experience provided by the quiz. The images of Yoda and Darth-Vader were taken from [pngimg.com](https://pngimg.com). Darth Maul's image was taken from [iconarchive](https://www.iconarchive.com/) and Darth Sidious's was taken from [pngkey.com](https://www.pngkey.com/).
 
 [yoda.png](https://pngimg.com/image/109430)
 
@@ -290,3 +291,5 @@ I would like to acknowledge the following people who have been a huge help for t
 - [Lauren-Nicole](https://github.com/CluelessBiker) - My Code Institute Mentor for her advice and expertise.
 
 - The Slack community of Code Institute for their help and support.
+
+- Tutor Support from Code Institute for their help and support.
